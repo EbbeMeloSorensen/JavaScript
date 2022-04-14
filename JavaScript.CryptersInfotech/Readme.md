@@ -1,6 +1,9 @@
 ## Udemy Course: APIs in Action - Build API-Based Applications
 
-Instruktøren laver nogle simple web applikationer, som trækker på nogle frit tilgængelige wep apis.
+Instruktøren laver nogle simple web applikationer, som trækker på nogle frit tilgængelige wep apis. Hun bruger ikke noget udviklingsmiljø men laver bare
+tingene i en og samme html-fil, inklusive css og java script. Hun kører det
+under en Apache Web server, men tilsyneladende kan man bare køre det direkte
+ved at åbne html-filen i en browser.
 
 Hun nævner indledningsvis, at hun har det kørende på en Apache Web Server, og hvis man vil gøre noget tilsvarende,
 kan man følge anvisningern fra videoen på denne side ("How to install Apache's Web Server on Windows 10"): 
