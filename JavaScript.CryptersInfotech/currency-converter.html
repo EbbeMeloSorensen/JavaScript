@@ -2,7 +2,121 @@
 <html lang="eng">
 <head>
 	<title>Currency Converter</title>
+	<!-- This section is css (cascading style sheet). Usually we have it in a separate file
+		* (star) means everything, i.e same font everywhere on page in this example -->
+	<style>
+		* 
+		{
+			font-family: cursive
+		}
+		#container
+		{
+			height: 150px;
+			margin: 0px auto;
+		}
+		h2
+		{
+			text-align: center;
+			font-size: 60px;
+		}
+		table
+		{
+			margin: 0px auto;
+		}
+		span
+		{
+			font-size: 30px;
+		}
+		input
+		{
+			font-size: 30px;
+			border: 2px solid black;
+			border-radius: 10px;
+		}
+		select
+		{
+			font-size: 30px;
+			border-radius: 10px;
+		}
+		#result
+		{
+			font-size: 50px;
+			text-align: center;
+		}
+	</style>
+	<script>
+		// Here we have a java script function that calls a third party web api.
+		// I guess it is generally preferred to have java script code in a separate file
+		function currencyConversion()
+		{
+			var from = document.getElementById("from").value;
+			var to = document.getElementById("to").value;
+			var amt = document.getElementById("fromAmt").value;
+			var xmlhttp = new XMLHttpRequest();
+			var url = "http://api.exchangeratesapi.io/v1/latest?access_key=3d5861a43985fbc3778eda7aaa2fefa9&symbols=" + from + "," + to;
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+			xmlhttp.onreadystatechange = function()
+			{
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+				{
+					var result = xmlhttp.responseText;
+					//alert(result); // For diagnostics - just show result in window
+					var jsResult = JSON.parse(result);
+					var oneUnit = jsResult.rates[to]/jsResult.rates[from];
+					document.getElementById("result").innerHTML = (oneUnit * amt).toFixed(2);
+				}
+			}
+		}
+	</script>
 </head>
-<body>
+<body onload="currencyConversion();">
+	<div id="container">
+		<h2>Currency Converter</h2>
+		<table>
+			<tr>
+				<th><span>Amount</span></th>
+				<th><span>From</span></th>
+				<th><span>To</span></th>
+			</tr>
+			<tr>
+				<td><input type="text" id="fromAmt" value="1"
+					onkeyup="currencyConversion();"></td>
+				<td>
+					<select id="from" onchange="currencyConversion();">
+						<option value="USD" selected>US Dollar</option>
+						<option value="INR">Indian Rupee</option>
+						<option value="BGN">Bulgarian Lev</option>
+						<option value="AUD">Australian Dollar</option>
+						<option value="CAD">Canadian Dollar</option>
+						<option value="CHF">Swiss Franc</option>
+						<option value="DKK">Danish Krone</option>
+						<option value="GBP">Pound Sterling</option>
+						<option value="ILS">Israeli New Shekel</option>
+						<option value="JPY">Japanese Yen</option>
+						<option value="PHP">Philippine Peso</option>
+						<option value="RUB">Russian Ruble</option>
+					</select>
+				</td>
+				<td>
+					<select id="to" onchange="currencyConversion();">
+						<option value="USD">US Dollar</option>
+						<option value="INR" selected>Indian Rupee</option>
+						<option value="BGN">Bulgarian Lev</option>
+						<option value="AUD">Australian Dollar</option>
+						<option value="CAD">Canadian Dollar</option>
+						<option value="CHF">Swiss Franc</option>
+						<option value="DKK">Danish Krone</option>
+						<option value="GBP">Pound Sterling</option>
+						<option value="ILS">Israeli New Shekel</option>
+						<option value="JPY">Japanese Yen</option>
+						<option value="PHP">Philippine Peso</option>
+						<option value="RUB">Russian Ruble</option>
+					</select>
+				</td>
+			</tr>
+			<tr><td colspan="3"><div id="result"></div></td></tr>
+		</table>
+	</div>
 </body>
 </html>
