@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>World Clock</title>
+	<style>
+		#container
+		{
+			width: 400px;
+			height: 200px;
+			margin: 100px auto;
+		}
+		*
+		{
+			font-family: cursive;
+		}
+		h2
+		{
+			font-size: 60px;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		label
+		{
+			font-size: 30px;
+		}
+		input
+		{
+			font-size: 40px;
+			border: 1px solid black;
+		}
+		#clock
+		{
+			font-size: 50px;
+			margin: 10px;
+		}
+	</style>
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h2>World Clock</h2>
+		<label for="country">Search and Select:</label>
+		<input type="text" id="country" list="countries" placeholder="e.g. dubai" onchange="collectTime();" />
+		<datalist id="countries"></datalist>
+		<div id="clock"></div>
+	</div>
+	<script>
+		// Global variables
+		var myList = document.getElementById("countries");
+		var myText = document.getElementById("country");
+		var mySeconds;
+		var myTimer;
+		var xmlhttp = new XMLHttpRequest();
+
+		// Denne bruges til at populere vores drop down liste, så den kaldes kun én gang
+		xmlhttp.open("GET", "http://api.timezonedb.com/v2.1/list-time-zone?key=9ZKN2YYSTPFQ&format=json", false);
+		xmlhttp.send();
+		if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+		{
+			//console.log(xmlhttp.responseText); // (kontrol)
+			var timezones = JSON.parse(xmlhttp.responseText).zones;
+			timezones.forEach(function(item, index) {
+				//console.log(item.zoneName);
+				var myStr = item.zoneName;
+				// Notice the use of a regular expression
+				var myZone = myStr.substring(myStr.lastIndexOf("/") + 1, myStr.length).replace(/_/g, " ");
+				//console.log(myZone);
+				var opt = document.createElement("option");
+				opt.appendChild(document.createTextNode(myZone));
+				opt.value = item.zoneName;
+				myList.appendChild(opt);
+			})
+		}
+		else
+		{
+			myText.placeholder = "No data..";
+		}
+
+		function collectTime()
+		{
+			var myRequest = new XMLHttpRequest();
+			var url = "http://api.timezonedb.com/v2.1/get-time-zone?key=9ZKN2YYSTPFQ&format=xml&by=zone&zone=" + myText.value;
+			myRequest.open("GET", url, false);
+			myRequest.send();
+			if(myRequest.status == 200 && myRequest.readyState == 4)
+			{
+				// The instructor does this, but it apparently doesn't work
+				//console.log(myRequest.responseXML.documentElement.firstChild.childNodes[0].nodeValue);
+
+				// This works - got it by drilling down and outputting to the console
+				//console.log(myRequest.responseXML.documentElement.firstElementChild.innerHTML);
+
+				if(myRequest.responseXML.documentElement.firstElementChild.innerHTML == "OK")
+				{
+					// kontrol
+					//var myData = myRequest.responseXML;
+					//console.log(myData);
+
+					// The instructor does this, but it apparently doesn't work
+					//var formattedDate = myRequest.responseXML.documentElement.lastChild.childNodes[0].nodeValue;
+					//console.log(formattedDate);
+
+					// This works - got it by drilling down and outputting to the console
+					var formattedDate = myRequest.responseXML.documentElement.lastElementChild.innerHTML;
+					//console.log(formattedDate);
+					mySeconds = new Date(formattedDate).getTime()/1000;
+					//console.log(mySeconds);
+
+					clearInterval(myTimer);
+					myTimer = setInterval(displayClock, 1000);
+				}
+				else
+				{
+					clearInterval(myTimer);
+					document.getElementById("clock").innerHTML = "No Results..";
+					alert("Select a zone from the available list..");
+				}
+			}
+		}
+
+		function displayClock()
+		{
+			mySeconds++;
+			var clock = new Date(mySeconds*1000);
+			var hours = clock.getHours();
+			var minutes = clock.getMinutes();
+			var seconds = clock.getSeconds();
+			var ampm = "AM";
+			if (hours >= 12)
+				ampm = "PM";
+			if (hours >= 13)
+				hours -= 12;
+			if (hours == 0)
+				hours = 12;
+			if (hours < 10)
+				hours = "0" + hours;
+			if (minutes < 10)
+				minutes = "0" + minutes;
+			if (seconds < 10)
+				seconds = "0" + seconds;
+
+			document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + " " + ampm;
+		}
+	</script>
+</body>
+</html>
