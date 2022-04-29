@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check HTML5 Geolocation Support</title>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		window.onload = function() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(onSuccess);
+			}
+			else
+				document.getElementById("result").innerHTML = "Your browser does not support HTML5 Geolocation";
+
+		}
+
+		function onSuccess(position) {
+			var date = new Date(position.timestamp);
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var ampm = "AM"
+
+			if (hours<10) {
+				hours = "0" + hours;
+			}
+
+			if (minutes<10) {
+				minutes = "0" + minutes;
+			}
+
+			if (hours >12)
+			{
+				hours = hours - 12;
+			}
+
+			if (hours >= 12)
+			{
+				ampm = "PM";
+			}
+
+			document.getElementById("result").innerHTML = "We collected location information at " + hours + ":" + minutes + " " + ampm;
+		}
+	</script>
+</head>
+<body>
+	<div id="result"></div><br />
+</body>
+</html>

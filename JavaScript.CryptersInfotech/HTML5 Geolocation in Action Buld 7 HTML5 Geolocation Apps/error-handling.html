@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error Handling</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(onSuccess, onError);
+			}
+		}
+
+		function onSuccess(position) {
+			var currentLat = position.coords.latitude;
+			var currentLong = position.coords.longitude;
+
+			document.getElementById("location").innerHTML = "Latitude: " + currentLat + "<br />Longitude: " + currentLong;
+		}
+
+		function onError(error) {
+			switch(error.code) {
+				case PERMISSION_DENIED:
+					alert("User denied permission");
+					break;
+				case TIMEOUT:
+					alert("Geolocation timed out");
+					break;
+				case POSITION_UNAVAILABLE:
+					alert("Geolocation information is not available");
+					break;
+				default:
+					alert("Unknown error");
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="location"></div>
+</body>
+</html>

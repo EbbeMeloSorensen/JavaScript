@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Static Map</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			// Danshøjvej 33
+			var latitude = 55.661954;
+			var longitude = 12.49001;
+			var latlong = latitude + "," + longitude;
+
+			//Get API key for Google Static Maps API and use it in the place of YOUR-KEY
+			var mapUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=20&size=300x300&maptype=satellite&key=AIzaSyD-Ua6dMytGeJVKyfkhB8S5MdPFQ351lu0";
+			document.getElementById("staticmap").innerHTML = "<img src='" + mapUrl + "'>";
+		}
+	</script>
+</head>
+<body>
+	<div id="staticmap" style="width:300px;height:300px;"></div>
+</body>
+</html>
