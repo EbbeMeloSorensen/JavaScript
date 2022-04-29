@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Map</title>
+<!-- Get API key for Google Maps JavaScript API and use it in the place of YOUR-KEY -->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD-Ua6dMytGeJVKyfkhB8S5MdPFQ351lu0"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		}
+	}
+
+	function onSuccess(position)
+	{
+		var currentLat = position.coords.latitude;
+		var currentLong = position.coords.longitude;
+		var latlang = new google.maps.LatLng(currentLat, currentLong);
+		var mapProp = {center: latlang, zoom:16, mapTypeId:google.maps.MapTypeId.ROADMAP};
+
+		var map = new google.maps.Map(document.getElementById("interactivemap"),mapProp);
+	}
+
+	function onError(error) {
+		switch(error.code) {
+			case PERMISSION_DENIED:
+				alert("User denied permission");
+				break;
+			case TIMEOUT:
+				alert("Geolocation timed out");
+				break;
+			case POSITION_UNAVAILABLE:
+				alert("Geolocation information is not available");
+				break;
+			default:
+				alert("Unknown error");
+				break;
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="interactivemap" style="width:600px;height:500px;"></div>
+</body>
+</html>
