@@ -4,6 +4,7 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 *.backup
+package-lock.json
 
 # Node artifact files
 node_modules/
