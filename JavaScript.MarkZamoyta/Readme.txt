@@ -8,7 +8,13 @@ ABSTRACT:
 DEN RØDE TRÅD:
 
 Section 1: Course Overview
-  En meget kort præsentation af, hvad kurset indeholder
+  En meget kort præsentation af, hvad kurset indeholder. Han nævner, at "Apache Cordova" er et populært 
+  værktøj til at lave "native applications for smart phones and tablets". Han nævner også, at man med
+  et tool som "Electron" kan lave full fledged desktop applikationer til f.eks. Mac og Windows, som
+  er uafhængige af en browser. Desuden nævner han, at man med "Node.js" kan skrive server side kode
+  i form af bl.a. web api'er og web servers. Han nævner, at vi til kurset skal bruge de 3 tools:
+  git, node.js og visual studio code.
+  
 
 Section 2: Introduction to JavaScript  
   Han demonstrerer, hvordan man sætter en minimal HelloWorld applikation op, og dernæst, hvordan man
@@ -49,10 +55,10 @@ Section 8: Objects and the DOM
   simple datatyper passes "by value", mens objekter passes "by reference".
   Nu snakker han så om nogle af de mest almindelige built-in objekter i JavaScript:
     - Array
-	- Date
-	- Math
-	- String
-	- Number
+    - Date
+    - Math
+    - String
+    - Number
   Man kan i øvrigt se en oversigt på https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects.
   Nu snakker han så om Domain Object Model, hvilket i princippet er en reference til selve web pagen og de objekter,
   den er bygget op af. "You would say that you are programming the DOM, and that refers to modifying the web page and
