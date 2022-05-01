@@ -201,9 +201,6 @@
     </footer>
 </div>
 
-<script src="./utils.js"></script>
-<script src="./home.js"></script>
-
 <!-- Selv om det er muligt, er det dårlig praksis at have javascript kode i html filen -->
 <!-- 
 <script>
@@ -211,9 +208,14 @@
     alert('Carved Rock Fitness');
 </script> -->
 
-<!-- Dette er derimod god praksis 
-     Bemærk i øvrigt, at man ikke kan lukke med en / lige som man kan i xml-->
-<script src="./filename.js"></script>
+<!-- Dette er derimod god praksis -->
+<script src="./utils.js"></script>
+<script src="./home.js"></script>
+
+<!-- Bemærk, at man ikke bør skrive sådan her, da det kan give problemer i nogle browsere. -->
+<!--
+<script src="./utils.js" />
+-->
 
 </body>
 </html>
