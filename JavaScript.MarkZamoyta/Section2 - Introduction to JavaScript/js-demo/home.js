@@ -115,7 +115,7 @@ if (5 > 5) {
     console.log('No');
 }
 
-// Der er også en operator med 2 lighedstegn, men deprøver at konvertere variablerne til 
+// Der er også en operator med 2 lighedstegn, men de prøver at konvertere variablerne til 
 // andre typer, så dette evaluerer til true
 if (1 == "1") {
     console.log('Yes');
@@ -166,7 +166,7 @@ if (true)
 
 // Løkker
 // Bemærk, at hvis du har en uendelig løkke, så fryser browseren og man er nødt til at
-// lukke den, og derudover skal man lukke applikationen fra konsollen, rette fejæen 
+// lukke den, og derudover skal man lukke applikationen fra konsollen, rette fejlen 
 // og køre den påny
 for (let i = 0; i < 3; i++) {
     console.log(i);
@@ -341,3 +341,38 @@ console.log(Math.random())
 let s = "Hello";
 console.log(s.charAt(0));
 console.log(Number.MAX_VALUE);
+
+// Nu skal vi have noget sjov med den såkaldte DOM, der står for Document Object Model.
+// Den repræsenterer selve web pagen, og ofte er formålet med JavaScript koden at
+// ændre web pagen ved at manipulere DOM'en eller nok rettere sagt programmere DOM'en.
+
+// Nogle relevante ressourcer:
+//   https://developer.mozilla.org/en-US/docs/Web
+//   https://developer.mozilla.org/en-US/docs/Web/HTML
+//   https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API
+//   https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+
+// Ændr en style på et HTML element
+const header = document.getElementById('message')
+header.style.fontWeight = '800';
+
+const button = document.getElementById('see-review')
+
+// Tilføj en handler til når brugeren klikker på et element (som godt nok er et anchor..)
+button.addEventListener('click', function() {
+    // Få et view, der som udgangspunkt er skjult, til at blive vist, eller til at
+    // blive skjult, hvos det allerede vises. Vi ændrer også teksten på knappen, og bemærk,
+    // at vi godt kan få fat i knappen inde fra denne funktion, da knappen er i et "outer scope"
+    // i forhold til funktionen.
+    console.log('click');
+    const review = document.getElementById('review');
+
+    if (review.classList.contains('d-none')) {
+        review.classList.remove('d-none');
+        button.textContent = 'CLOSE REVIEW';
+    }
+    else {
+        review.classList.add('d-none');
+        button.textContent = 'SEE REVIEW';
+    }
+});
