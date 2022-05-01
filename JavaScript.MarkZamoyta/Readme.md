@@ -11,25 +11,27 @@ https://app.pluralsight.com/library/courses/javascript-getting-started
 
 ### Section 1: Course Overview
   En meget kort præsentation af, hvad kurset indeholder. Han nævner, at **Apache Cordova** er et populært værktøj til at lave "native applications for smart phones and tablets". Han nævner også, at man med et tool som **Electron** kan lave full fledged desktop applikationer til f.eks. Mac og Windows, som er uafhængige af en browser. Desuden nævner han, at man med **Node.js** kan skrive server side kode i form af bl.a. web api'er og web servers. Han nævner, at vi til kurset skal bruge de 3 tools: git, node.js og visual studio code.
-
+  
 
 ### Section 2: Introduction to JavaScript  
   Han demonstrerer, hvordan man sætter en minimal HelloWorld applikation op, og dernæst, hvordan man
   kører en applikation, der er mere kompleks, men som stadig er ren html med css og altså ikke bruger 
-  JavaScript endnu. Han nævner, at man bør køre npm install i en browser uden for VS code frem for at bruge et terminalvindue i selve VS Code. Man kan dog passende køre npm run start fra command prompten i VS Code, for at starte den "light server", der så hoster ens html-page. Det er bl.a. smart fordi man så bare skal gemme sin html fil for at opdatere browseren.
+  JavaScript endnu
 
 ### Section 3: JavaScript Beginnings
-  Nu skal vi så i gang med at bruge JavaScript i vores web applikation. Det er temmelig basic stuff vedr funktioner, separering af html og js, kommentering osv.
+  Nu skal vi så i gang med at bruge JavaScript i vores web applikation
+  Det er temmelig basic stuff vedr funktioner, separering af html og js,
+  kommentering osv.
 
 ### Section 4: Variables and Constants
   Total basic stuff om erklæring og intitialisering af konstanter og variable
-
+  
 ### Section 5: Types and Operators
   Igen meget basic stuff om typer, operatorer, strenge, konvertering. Han snakker om null og undefined,
   hvor undefined angiver, at en variabel aldrig har været initialiseret, mens null angiver, at den er
   blevet nulstillet af noget kode en udvikler har skrevet.
   Til sidst snakker han om typen object, som minder om en struct.
-
+  
 ### Section 6: Program Flow
   Igen meget basic stuff, nu om logiske operatorer og en snak om begreberne Truthy or Falsy.
   Han introducerer operatorerne ===, !===, ==, !=  - de 2 første kan læses som "strictly equal to".
@@ -59,6 +61,6 @@ https://app.pluralsight.com/library/courses/javascript-getting-started
   den er bygget op af. "You would say that you are programming the DOM, and that refers to modifying the web page and
   getting events from a user using the web page, events such as a user typing in information or clicking a button. All
   of this is controlled by the DOM".
-
+  
   
 
