@@ -10,7 +10,7 @@ https://app.pluralsight.com/library/courses/javascript-getting-started
 ## Den røde tråd
 
 ### Section 1: Course Overview
-  En meget kort præsentation af, hvad kurset indeholder. Han nævner, at "Apache Cordova" er et populært værktøj til at lave "native applications for smart phones and tablets". Han nævner også, at man med et tool som "Electron" kan lave full fledged desktop applikationer til f.eks. Mac og Windows, som er uafhængige af en browser. Desuden nævner han, at man med "Node.js" kan skrive server side kode i form af bl.a. web api'er og web servers. Han nævner, at vi til kurset skal bruge de 3 tools: git, node.js og visual studio code.
+  En meget kort præsentation af, hvad kurset indeholder. Han nævner, at **Apache Cordova** er et populært værktøj til at lave "native applications for smart phones and tablets". Han nævner også, at man med et tool som **Electron** kan lave full fledged desktop applikationer til f.eks. Mac og Windows, som er uafhængige af en browser. Desuden nævner han, at man med **Node.js** kan skrive server side kode i form af bl.a. web api'er og web servers. Han nævner, at vi til kurset skal bruge de 3 tools: git, node.js og visual studio code.
   
 
 ### Section 2: Introduction to JavaScript  
