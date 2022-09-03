@@ -167,3 +167,9 @@ if (a === b) console.log("a equals b");
 // such an in a template literal, like here:
 console.log(`I am ${a === b ? 'happy' : 'sad'}`);
 // The ternary operator is usually utilized for assigning values to variables
+
+// A bit of fun with dates (not from the course)
+// Notice: JavaScript counts months from 0 to 11...
+// Notice: JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated)
+let myBirthday = new Date(1975, 6, 24); 
+console.log(myBirthday);
