@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Basics</title>
+    <!-- Dette er en online reference til jQuery, hvilket er et alternativ til at operere med en offline
+         reference, hvor man refererer en lokal fil -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Dette er en selector for et element, der gør brug af dets id og derefter laver en handler 
+            // for elementets click event. I handleren ændrer vi indholdet af et andet element.
+            // Bemærk, at det andet element ikke har et id, men det virker alligevel, fordi det er
+            // det eneste paragraph (p) element.
+            $("#btnChange").click(function(){
+                $("p").html("This is the new content!!")
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>This is just a simple demonstration of jQuery from a Udemy course by Crypters Infotech</h3>
+    <p>This is a paragraph!!</p>
+    <button id="btnChange">Change</button>
+</body>
+</html>
