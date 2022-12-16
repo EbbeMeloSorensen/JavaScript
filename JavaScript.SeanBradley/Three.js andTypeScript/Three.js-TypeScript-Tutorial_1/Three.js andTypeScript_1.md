@@ -236,4 +236,4 @@ Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en appl
     cube.rotation.y += 0.01
     ```
     
-    
+    Bemærk i øvrigt, at det element, der vises, faktisk er en HTML Canvas, hvilket f.eks. kan ses, hvis man aktiverer development mode i Chrome og inspicerer Elements-tabben!
