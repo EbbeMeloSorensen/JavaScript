@@ -81,6 +81,7 @@ Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en appl
    renderer.setSize(window.innerWidth, window.innerHeight)
    document.body.appendChild(renderer.domElement)
    
+   // Dette giver brugeren mulighed for at styre kameraet
    const controls = new OrbitControls(camera, renderer.domElement)
    
    const geometry = new THREE.BoxGeometry()
@@ -103,6 +104,7 @@ Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en appl
    function animate() {
        requestAnimationFrame(animate)
    
+   	// Dette snurrer scenen rundt, når brugeren ikke selv tager kontrol med musen
        cube.rotation.x += 0.01
        cube.rotation.y += 0.01
    
@@ -216,3 +218,22 @@ Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en appl
     ```
 
     Hvis man nu åbner en browser og indtaster `localhost:8080`, skulle man så gerne kunne se en grøn kasse, der snurrer rundt på en sort baggrund.
+    
+    Bemærk, at man kan styre kameraet ved f.eks. at left-klikke og dragge (for at dreje), højre-klikke og dragge (for at flytte) og bruge mussens rulleknap til at zomme, enten ved at dreje hjulet eller holde det nede og så dragge. Det skyldes de 3 linier i filen `client.ts`:
+    
+    ```
+    import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.update()
+    ```
+    
+    Disse linier kan udelades, hvis man ikke vil tillade brugeren at styre kameraet.
+    
+    Det at kuben snurer, skyldes disse linier, som også ville kunne udelades:
+    
+    ```
+    cube.rotation.x += 0.01
+    cube.rotation.y += 0.01
+    ```
+    
+    

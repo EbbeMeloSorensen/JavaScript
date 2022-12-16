@@ -10,6 +10,7 @@ const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
+// Dette giver brugeren mulighed for at styre kameraet
 const controls = new OrbitControls(camera, renderer.domElement)
 
 const geometry = new THREE.BoxGeometry()
@@ -32,6 +33,7 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate)
 
+	// Dette snurrer scenen rundt, når brugeren ikke selv tager kontrol med musen
     cube.rotation.x += 0.01
     cube.rotation.y += 0.01
 
