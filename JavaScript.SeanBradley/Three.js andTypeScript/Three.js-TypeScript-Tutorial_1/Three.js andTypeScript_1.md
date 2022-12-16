@@ -4,12 +4,7 @@
 
 https://www.udemy.com/course/threejs-tutorials/
 
-
-## Summary
-
-Et kursus om hvordan man laver en Javascript applikation til at tegne 3D grafik under anvendelse af VS Code, TypeScript og javascript libraryet Three.js
-
-## Den røde tråd
+Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en applikation, der kan køres i development mode med en grøn kube, som snurrer på en sort baggrund.
 
 ### Section 1: Introduction
 
