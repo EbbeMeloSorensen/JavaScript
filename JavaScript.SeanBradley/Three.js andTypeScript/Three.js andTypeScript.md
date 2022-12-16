@@ -13,5 +13,5 @@ Frem for bare at have historikken i Git, har jeg ved passende milestones lavet e
 
 ## Den røde tråd
 
-Det er sådan lidt en tour de force, hands-on gennemgang af libraryet
+Det er sådan lidt en tour de force, hands-on gennemgang af libraryet. Han starter med at sætte miljøet op og lave en hello-world style applikation. Så laver han en ilustration, der uddyber, hvordan de 3 centrale klasser: Scene, Camera og Renderer samarbejder
 
