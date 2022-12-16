@@ -136,7 +136,7 @@ Trinene i denne guide svar til lektionerne 1-6 i kurset og leder hen til en appl
    npm install @types/three
    ```
 
-   Bemærk, at det kan være nødvendigt at trykke F1 i VS Code og så vælge "TypeScript - Restart TS Server" for at få det til at virke.
+   Bemærk, at det kan være nødvendigt at trykke F1 i VS Code og så vælge "TypeScript - Restart TS Server" for at få compileren til at stoppe med at brokke sig.
 
 10. Sæt nu "WebPack Dev Server" op ved at eksekvere følgende i terminalvinduet i VS code:
 
