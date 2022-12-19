@@ -1,0 +1,28 @@
+{
+    "type": "FeatureCollection",
+    "name": "nabolag3",
+    "crs": { 
+        "type": "name", 
+        "properties": { 
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84" 
+        } 
+    },
+    "features": [
+        { 
+            "type": "Feature", 
+            "properties": { 
+                "osm_id": null, 
+                "osm_way_id": "154474313", 
+                "building": "yes" 
+            }, "geometry": { 
+                "type": "MultiPolygon",
+                "coordinates": [ [ [ 
+                    [ 12.4899788, 55.6618916 ], 
+                    [ 12.4898795, 55.6619342 ], 
+                    [ 12.4899608, 55.6619945 ], 
+                    [ 12.4900601, 55.6619519 ], 
+                    [ 12.4899788, 55.6618916 ] ] ] ] 
+            } 
+        }
+    ]
+}

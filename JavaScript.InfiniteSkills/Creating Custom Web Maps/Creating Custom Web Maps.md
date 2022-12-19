@@ -7,7 +7,7 @@ https://www.udemy.com/course/creating-custom-web-maps/
 
 ## Summary
 
-Et kursus om hvordan man laver en javascript baseret web applikation, der anvender web maps, og som baserer sig på javascript libraryet Leaflet samt data fra OpenStreetMap.
+Et kursus om hvordan man laver en javascript baseret web applikation, der anvender web maps, og som baserer sig på javascript libraryet Leaflet samt data fra OpenStreetMap eller MapBox, som er 2 forskellige Tile Service providers. Ud over at han benytter sig af Leaflet, går han målrettet efter at lave konstruktionerne i Vanilla Javascript, dvs uden at bruge alle mulige javascript libaries - han benytter f.eks. heller ikke jQuery. Han snakker også om GeoJson og demonstrerer, hvordan man kan extrahere data fra OpenStreetMap og konvertere det til GeoJson, som let kan indkorporeres i en Leaflet-applikation. Dertil benytter han værktøjerne JOSM og QGis.
 
 ## Den røde tråd
 
@@ -221,7 +221,36 @@ I det følgende demonstreres:
 
 10) Verificer at det virker ved at åbne `index.html`-filen i en browser.
 
+### Section 4: Customizing the Base Map
 
+Her demonstreres det, hvordan man kan vælge mellem et antal forskellige udbydere af tile servers, og hvordan man kan customize visningen af sit map.
+
+11. Erstat den øverste instruktion i `map.js`-filen, som angiver, at vi baserer os på en tile server fra OpenStreetMap, med en, der angiver, at vi baserer os på en tile server fra MapBox:
+
+    ```
+    // Her bruger vi en tile server fra openstreetmap
+    //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //    maxZoom: 19,
+    //    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    //}).addTo(map);
+    
+    // Her bruger vi en tile server fra Mapbox (access token udeladt for at undgå misbrug)
+    var access_token = 'secret';
+    L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg80?access_token=' + access_token, {
+        maxZoom: 19,
+        attribution: '&copy; Mapbox &copy; OpenStreetMap contributors'
+    }).addTo(map);
+    ```
+
+### Section 5: Adding Geospatial Data
+
+Her introducerer han OpenStreetMap, som er et data repository i stil med Wikipedia, blot med geospatielle data. Han demonstrerer, hvordan man kan bidrage med at tilføje detaljer til repositoryet. Så demonstrerer han, hvordan man med værktøjet **"JOSM"** kan ekstrahere data fra OpenStreetMap og gemme det som en *.osm-fil. Sådan en osm-fil kan efterfølgende åbnes i f.eks QGis, behandles der og så eksporteres som en GeoJson-fil, der let kan hentes ind i en Leaflet-applikation, hvilket han demonstrerer. Han demonstrerer også, hvordan man let kan tilføje noget styling og popups for sådan et geojson-baseret lag.
+
+Han gennemgår i øvrigt GeoJson-formatet, som virker ret simpelt - Root elementet er tilsyneladende altid en feature collection, der har lidt generel data som f.eks. projektion (sædvanligvis wgs84) og derudover et antal features, der hver især har valgfri properties samt en geometry, som kan være et punkt eller multipunkt, en linie eller multilinie eller en polygon eller multipolygon.
+
+### Section 6: Conclusion
+
+Han summerer kort, hvad der er blevet gennemgået i kurset.
 
 
 

@@ -1,10 +1,70 @@
 // initialize the map on the "map" div with a given center and zoom level
 var map = L.map('map').setView([55.676111, 12.568333], 13);
 
+// Her bruger vi en tile server fra openstreetmap
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+/*
+var access_token = 'secret';
+// Her bruger vi en tile server fra Mapbox (access token udeladt for at undgå misbrug)
+L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.jpg80?access_token=' + access_token, {
+    maxZoom: 19,
+    attribution: '&copy; Mapbox &copy; OpenStreetMap contributors'
+}).addTo(map);
+*/
+
+// Bemærk: Dette blokeres af CORS policy i både Chrome og Firefox, på trods af at instruktøren siger,
+// at det burde virke i Firefox
+/*
+var request = new XMLHttpRequest();
+request.open('GET', 'json/nabolag.geojson', true);
+request.onreadystatechange = function() {
+    if (this.readyState === 4) {
+        if (this.status >= 200 && this.status < 400) {
+            var geojsonData = JSON.parse(this.responseText);
+            L.geoJson(geojsonData).addTo(map);
+        }
+    }
+};
+
+request.send();
+request = null;
+*/
+
+// ..derfor hardkoder vi det lige, hvilket nogle gange giver mening i praksis
+var geojsonData = {
+    "type": "FeatureCollection",
+    "name": "nabolag3",
+    "crs": { 
+        "type": "name", 
+        "properties": { 
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84" 
+        } 
+    },
+    "features": [
+        { 
+            "type": "Feature", 
+            "properties": { 
+                "osm_id": null, 
+                "osm_way_id": "154474313", 
+                "building": "yes" 
+            }, "geometry": { 
+                "type": "MultiPolygon",
+                "coordinates": [ [ [ 
+                    [ 12.4899788, 55.6618916 ], 
+                    [ 12.4898795, 55.6619342 ], 
+                    [ 12.4899608, 55.6619945 ], 
+                    [ 12.4900601, 55.6619519 ], 
+                    [ 12.4899788, 55.6618916 ] ] ] ] 
+            } 
+        }
+    ]
+}
+
+L.geoJson(geojsonData).addTo(map);
 
 //var marker = L.marker([55.66194, 12.49]).addTo(map);
 
