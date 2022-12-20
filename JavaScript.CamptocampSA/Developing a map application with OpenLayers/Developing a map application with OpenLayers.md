@@ -266,7 +266,86 @@ Nu laver vi en web mapping applikation, som omfatter nogle standardkontroller, s
     })
     ```
 
-15. 
+15. Check igen at det virker ved at eksekvere: `npm start`. Der kører igen en web applikation, men nu, hvor der er lidt flere kontroller (alla "widgets"), nemlig et oversigtskort, en zoom to extent-knap og en bjælke, der viser størrelsesforhold.
+
+### Section 5: Create a map with a WMS Layer
+
+Her bygger vi videre på web applikationen fra før, hvor vi tilføjer et tile layer fra en WMS-service - specifikt et, der handler om jordskælvs-zoner
+
+16) Ændr `index.js`-filen, så den ser således ud:
+
+    ```
+    import "ol/ol.css";
+    import { Map, View } from "ol";
+    import TileLayer from "ol/layer/Tile";
+    import OSM from "ol/source/OSM";
+    import { Attribution, ScaleLine, OverviewMap, ZoomToExtent, defaults as defaultControls } from  "ol/control";
+    import TileWMS from "ol/source/TileWMS";
+    
+    let basemapLayer = new TileLayer({
+        source: new OSM({
+            url: "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+        })
+    })
+    
+    let overviewLayer = new TileLayer({
+        source: new OSM({
+            url: "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+        })
+    })
+    
+    let earthquakeLayer = new TileLayer({
+        source: new TileWMS({
+            url: "https://sedac.ciesin.columbia.edu/geoserver/wms",
+            params: {
+                LAYERS: "ndh:ndh-earthquake-frequency-distribution",
+                TILES: true
+            }
+        })
+    })
+    
+    // En map control
+    let overviewMapControl = new OverviewMap({
+        className: "ol-overviewmap ol-custom-overviewmap",
+        layers: [overviewLayer],
+        collapsed: false
+    });
+    
+    // En map control mere
+    let zoomToExtentControl = new ZoomToExtent({
+        // ESPG:3857
+        extent: [-15000000, -24000000, 15000000, 29000000]
+    });
+    
+    function getScaleControl() {
+        let control = new ScaleLine({
+            units: "metric",
+            bar: false,
+            steps: 6,
+            text: true,
+            minWidth: 140
+        })
+        return control;
+    }
+    
+    const map = new Map({
+        target: 'map',
+        layers: [basemapLayer, earthquakeLayer],
+        view: new View ({
+            center: [0, 0],
+            zoom: 0
+        }),
+        controls: defaultControls({
+            attributionOptions: {collapsible: true}
+        }).extend([overviewMapControl, zoomToExtentControl, getScaleControl()])
+    })
+    ```
+
+17) Check igen at det virker ved at eksekvere: `npm start`. Der kører igen en web mapping applikation, hvor man kan se jorskælvsområder markeret med gule nuancer.
+
+### Section 5: Create a map with a WMS Layer
+
+16) 
 
 
 
