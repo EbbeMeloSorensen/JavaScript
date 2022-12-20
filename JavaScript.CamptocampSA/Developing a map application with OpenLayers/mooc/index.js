@@ -4,6 +4,9 @@ import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import { Attribution, ScaleLine, OverviewMap, ZoomToExtent, defaults as defaultControls } from  "ol/control";
 import TileWMS from "ol/source/TileWMS";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import GeoJSON from "ol/format/GeoJSON";
 
 let basemapLayer = new TileLayer({
     source: new OSM({
@@ -24,6 +27,13 @@ let earthquakeLayer = new TileLayer({
             LAYERS: "ndh:ndh-earthquake-frequency-distribution",
             TILES: true
         }
+    })
+})
+
+let earthquakeVectorLayer = new VectorLayer({
+    source: new VectorSource({
+        format: new GeoJSON(),
+        url: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
     })
 })
 
@@ -53,7 +63,7 @@ function getScaleControl() {
 
 const map = new Map({
     target: 'map',
-    layers: [basemapLayer, earthquakeLayer],
+    layers: [basemapLayer, earthquakeLayer, earthquakeVectorLayer],
     view: new View ({
         center: [0, 0],
         zoom: 0
