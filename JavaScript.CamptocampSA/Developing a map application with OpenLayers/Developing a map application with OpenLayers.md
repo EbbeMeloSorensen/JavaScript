@@ -45,7 +45,11 @@ Han snakker lidt om OpenLayers, WFS (Web Feature Service) og WMS (Web Mapping Se
    },
    ```
 
-7) Lav i `mooc`-folderen en fil ved navn `index.html `med følgende indhold:
+### Section 2: The map (Map object)
+
+I første omgang laver vi en simpel web mapping applikation med et simpelt kort, der f.eks. viser landegrænser og -navne.
+
+7. Lav i `mooc`-folderen en fil ved navn `index.html `med følgende indhold:
 
    ```
    <!DOCTYPE html>
@@ -73,7 +77,7 @@ Han snakker lidt om OpenLayers, WFS (Web Feature Service) og WMS (Web Mapping Se
    </html>
    ```
 
-8) Lav også i `mooc`-folderen en fil ved navn `index.js `med følgende indhold:
+8. Lav også i `mooc`-folderen en fil ved navn `index.js `med følgende indhold:
 
    ```
    import "ol/ol.css";
@@ -95,9 +99,11 @@ Han snakker lidt om OpenLayers, WFS (Web Feature Service) og WMS (Web Mapping Se
    })
    ```
 
-9) Check at det virker ved at eksekvere: `npm start`. Applikationen skulle nu gerne køre i en browser med mulighed for navigering og zooming.
+9. Check at det virker ved at eksekvere: `npm start`. Applikationen skulle nu gerne køre i en browser med mulighed for navigering og zooming.
 
-10) Ændr `index.html`-filen, så den ser således ud:
+### Section 3: Create a simple map with a background XYZ
+
+10. Ændr `index.html`-filen, så den ser således ud:
 
     ```
     <!DOCTYPE html>
@@ -125,7 +131,7 @@ Han snakker lidt om OpenLayers, WFS (Web Feature Service) og WMS (Web Mapping Se
     </html>
     ```
 
-11) Ændr også `index.js`-filen, så den ser således ud:
+11. Ændr også `index.js`-filen, så den ser således ud:
 
     ```
     import "ol/ol.css";
@@ -163,7 +169,104 @@ Han snakker lidt om OpenLayers, WFS (Web Feature Service) og WMS (Web Mapping Se
 
 12) Check igen at det virker ved at eksekvere: `npm start`. Der kører igen en web applikation, men denne gang med en baggrund af satellitbilleder.
 
-13) 
+### Section 4: Adding map control
+
+Nu laver vi en web mapping applikation, som omfatter nogle standardkontroller, som vi har konfigureret arbitrært.
+
+13. Ændr `index.html`-filen, så den ser således ud:
+
+    ```
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OpenLayers App</title>
+        <style media="screen">
+            html, body, 
+            #map {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .map .ol-custom-overviewmap,
+            .map .ol-custom-overviewmap.ol-uncollapsible {
+                bottom: auto;
+                left: auto;
+                right: 0;
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="./index.js">
+        </script>
+    </body>
+    </html>
+    ```
+
+14. Ændr også `index.js`-filen, så den ser således ud:
+
+    ```
+    import "ol/ol.css";
+    import { Map, View } from "ol";
+    import TileLayer from "ol/layer/Tile";
+    import OSM from "ol/source/OSM";
+    import { Attribution, ScaleLine, OverviewMap, ZoomToExtent, defaults as defaultControls } from  "ol/control";
+    
+    let basemapLayer = new TileLayer({
+        source: new OSM({
+            url: "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+        })
+    })
+    
+    let overviewLayer = new TileLayer({
+        source: new OSM({
+            url: "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+        })
+    })
+    
+    // En map control
+    let overviewMapControl = new OverviewMap({
+        className: "ol-overviewmap ol-custom-overviewmap",
+        layers: [overviewLayer],
+        collapsed: false
+    });
+    
+    // En map control mere
+    let zoomToExtentControl = new ZoomToExtent({
+        // ESPG:3857
+        extent: [-15000000, -24000000, 15000000, 29000000]
+    });
+    
+    function getScaleControl() {
+        let control = new ScaleLine({
+            units: "metric",
+            bar: false,
+            steps: 6,
+            text: true,
+            minWidth: 140
+        })
+        return control;
+    }
+    
+    const map = new Map({
+        target: 'map',
+        layers: [basemapLayer],
+        view: new View ({
+            center: [0, 0],
+            zoom: 0
+        }),
+        controls: defaultControls({
+            attributionOptions: {collapsible: true}
+        }).extend([overviewMapControl, zoomToExtentControl, getScaleControl()])
+    })
+    ```
+
+15. 
 
 
 

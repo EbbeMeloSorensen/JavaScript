@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "oi": "^0.9.5",
     "ol": "^7.1.0",
     "parcel-bundler": "^1.12.5"
   }
