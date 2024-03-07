@@ -17,7 +17,7 @@ Kurset er et hands-on begynderkursus for HTML og CSS og dækker 4 store emner: W
 
 #### Read Before You Start!
 
-Bare en slide med Information om kursusmateriale, community, resourcer og tips
+Bare en slide med Information om kursusmateriale (såsom GitHub repository: https://github.com/jonasschmedtmann/html-css-course), community, resourcer og tips
 
 #### A High-Level Overview of Web Development
 
@@ -82,6 +82,8 @@ Her kan man så f.eks. ændre titlen og tilføje en header og en paragraph i bod
 ```
 
 Han anbefaler i øvrigt at placere VS Code side om side med en Chrome browser, hvor man kan se sin web side, mens man arbejder på html-koden.
+
+Han anbefaler at bruge et website, der heddeer CodePen: https://codepen.io/. Det er et forum, hvor man kan stille spørgsmål og udveksle erfaringer med andre frontend-udviklere.
 
 ### Section 2: HTML Fundamentals
 
