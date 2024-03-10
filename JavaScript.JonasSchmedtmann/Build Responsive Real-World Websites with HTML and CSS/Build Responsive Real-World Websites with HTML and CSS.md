@@ -320,7 +320,43 @@ Han introducerer også den såkaldte **universal selector**, som en slags wildca
 
 #### CSS Theory #3: The CSS Box Model
 
+Han introducerer the **"CSS Box Model"** og nævner, at det er et af de mest fundamentale koncepter i CSS. Den illustreres nedenfor og går på, at ethvert element repræsenteres af et rektangulært område på skærmen. Der benyttes de samme koncepter med border, padding og margin som i wpf.
+
+![alt](sec_03_css_box_model.png) 
+
 #### Using Margins and Paddings
+
+Man bruger padding ved at skrive en css declaration som den nedenstående, som så gælder hele vejen rundt om et givet element:
+
+```
+padding: 20px;
+```
+
+Box modellen vises i øvrigt i DevTools under Elements-tabben, som vist nedenfor:
+
+![alt](sec_03_css_box_model_in_devtools.png)
+
+Man kan holde musen over de forskellige områder for at fremhæve de tilsvarende områder i browser viewet.
+
+Padding kan også sættes forskellige for de forskellige sider, som illustreret nedenfor:
+
+```
+padding: 20px; /* Gælder hele vejen rundt */
+padding-left: 40px; /* Overrider for venstre side (de andre 3 sider har så stadig en padding på 20px) */
+padding-right: 40px; /* Overrider for højre side */
+padding: 20px 40px; /* Shorthand property, der giver samme resultat som de ovenstående 3 linier */
+```
+
+Han nævner, at en populær teknik er at bruge en såkaldt global reset, hvor man for den universelle selector sætter margin og padding til 0, som vist nedenfor;
+
+```
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+Så erstatter man alle default paddings og margins med 0, hvilket gør siden meget kompakt, og så kan man style den derfra.
 
 #### Adding Dimensions
 

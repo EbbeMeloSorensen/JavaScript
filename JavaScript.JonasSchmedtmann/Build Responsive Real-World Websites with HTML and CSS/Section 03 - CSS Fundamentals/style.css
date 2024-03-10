@@ -1,49 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
-    font-size: 10px;
-    text-transform: uppercase;
-    font-style: italic;
-    color: orange;
-    color: #f00;
-    color: rgb(127, 255, 0);
-    color: rgba(127, 255, 0, 0.25);
-    color: #1098ad;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: orange;
+  color: #f00;
+  color: rgb(127, 255, 0);
+  color: rgba(127, 255, 0, 0.25);
+  color: #1098ad;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 h3 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h4 {
-    font-size: 20px;
-    text-transform: uppercase;
-    text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 p {
-    font-size: 22px;
-    line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
 li {
-    font-size: 20px;
+  font-size: 20px;
+  margin-bottom: 10px; /* Giver en margen under alle list items i en liste */
+}
+
+li:last-child {
+  margin-bottom: 0; /* Sørger for, at der ikke er nogen margen under det SIDSTE list, dvs overrider stylen fra ovenstående rule */
 }
 
 /* Denne css rule specificerer font-family for et antal selectors på én gang
    under anvendelse af en list selector */
-h1, h2, h3, h4, p, li {
-    font-family: sans-serif;
-    color: #444;
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
 }
 
 /* Her har vi en anden list selector, der specificerer farve */
-h1, h2, h3 {
-    color: #1098ad;
+h1,
+h2,
+h3 {
+  color: #1098ad;
 }
-
 
 /* Selectoren i denne css rule er en såkaldt descendant selector, der angiver, at det kun er paragraphs 
    indlejret i en footer, der skal påvirkes */
@@ -60,73 +76,73 @@ h1, h2, h3 {
 
 /* Her har vi en hash selector, der påvirker et individuelt html element */
 #author {
-	font-style: italic;
-    font-size: 18px;
+  font-style: italic;
+  font-size: 18px;
 }
 
 /* Endu en hash selector */
 #copyright {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 /* Her har vi en class selector, der påvirker all html-elementer med en given klasse */
 .related-author {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .related {
-    list-style: none;
+  list-style: none;
 }
 
 .main-header {
-    background-color: #f7f7f7;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
 
 /* Her har vi en css rule med en almindelig element selector og 3 declarations. Bemærk de 2 nederste, der har en "shorthand property",
    som er kendetegnet ved at den tager flere værdier */
 aside {
-    background-color: #f7f7f7;
-    border-top: 5px solid #1098ad;
-    border-bottom: 5px solid #1098ad
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
 }
 
 /* I de næste 4 css rules knytter vi en såkaldt css "pseudo-class" til en selector. I dette eksempel for at ramme udvalgte items i lister*/
 li:first-child {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 li:last-child {
-    font-style: italic;
+  font-style: italic;
 }
 
 li:nth-child(2) {
-    color: red;
+  color: red;
 }
 
 li:nth-child(odd) {
-    color: purple;
+  color: purple;
 }
 
 /* I de næste 4 css rules bruger vi pseudo classes til at style links, inklusive den måde, de ser ud på, når man hover over eller klikker på dem med musen.
    Det er vigtigt, at rækkefølgen er som her, dvs LVHA */
 a:link {
-    color: #1098ad;
-    text-decoration: none;
+  color: #1098ad;
+  text-decoration: none;
 }
 
 a:visited {
-    color: #1098ad;
+  color: #1098ad;
 }
 
 a:hover {
-    color: orangered;
-    font-weight: bold;
-    text-decoration: underline orangered;
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
 }
 
 a:active {
-    background-color: black;
-    font-style: italic;
+  background-color: black;
+  font-style: italic;
 }
-
