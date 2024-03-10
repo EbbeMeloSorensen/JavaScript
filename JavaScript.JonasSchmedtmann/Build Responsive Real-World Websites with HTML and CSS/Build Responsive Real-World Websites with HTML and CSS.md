@@ -268,19 +268,53 @@ color: #00ffff; /* hexadecimal notation*/
 color: #0ff /* (shorthand hexadecimal notation - eksemplet her svarer til #00ffff) */
 ```
 
-Han nævner også, at man kan have gavn af at bruge VS Codes color selector tool.
+Han nævner også, at man kan have gavn af at bruge VS Codes color picker tool. Han bemærker i øvrigt, at hvis der er forskellige modstridende css rules for samme element, så er det den seneste, der gælder.
 
 #### Pseudo-classes
 
-...
+Man kan knytte en såkaldt **pseudo class** til en selector for at påvirke udvalgte child elementer for et givet parent element. Det kan f.eks. bruges til at style en liste med alternerende farver som i eksemplet nedenfor:
+
+```
+li:nth-child(odd) {
+  color: grey;
+}
+```
+
+Pseudo classes er specielt brugbare, når alle child elementer for et givet element er ens, som f.eks. for en list, men er ikke så intuitive, når et element har forskellige child elements, som f.eks. i en tilfælde som dette:
+
+```
+article p:first-child {
+  color: red;
+}
+```
+
+..dette virker kun, hvis første child element for article elementet er en paragraph.
 
 #### Styling Hyperlinks
 
+Pseudo classes kan f.eks. bruges til at style hyperlinks ud fra forskellige states, afhængigt af, om brugeren f.eks. hover over eller klikker på dem med musen.
+
 #### Using Chrome DevTools
+
+Man aktiverer development tools i sin Chrome browser ved at højreklikke et sted på web pagen og så klikke  "Inspect" eller "Undersøg" i context menuen. Så får man et view med en masse forskellige tabs.
+
+Den første tab hedder **"Elements"**, og her kan man se den html kode, der gør sig gældende. Man kan endda få highlighted html elementer i viewet ved at hovere musen over elementets underliggende html element i html-koden, hvilket er ret nyttigt. Elements-tabben har også en vigtig sektion, der hedder "Styles" eller, hvor man kan inspicere, hvilke css rules der påvirker et givet element, som man klikker på ovre i html-kode-viewet. Man kan endda manipulere stylingen ved at tilføje, aktivere og deaktivere styles med Dev Tools, hvilket kan være nyttigt for at teste ting under udvikling. Desuden kan man simulere states som f.eks. hover for et element for at force en given styling.
+
+Han kommer ikke omkring de andre tabs her, men han nævner, at DevTools er "absolutely essential" for at lave et web site på en effektiv måde.
 
 #### CSS Theory #1: Conflicts Beween Selectors
 
+Her snakker han om, hvad der sker, når flere forskellige css rules dækker samme html element. Som udgangspunkt gælder alle regler, og det er meget normalt, at de supplerer hinanden, men hvis de er uenige om en property som f.eks. font-size, bruges kriterierne illustreret nedenfor til at afgøre, hvilken style der så gælder:
+
+![alt](sec_03_conflicting_styles.png)
+
+Det er åbenbart meget almindeligt at selectors er uenige, så det er vigtigt at kunne gennemskue, hvorfor en given selector vinder. Man har mulighed for at gennemtvinge noget med ID selectors eller en endnu stærkere mekanisme, der går på at skrive `!important` efter en given css declaration, men man bør prøve at undgå disse 2 metoder. 
+
 #### CSS Theory #2: Inheritance and the Universal Selector
+
+Inheritance i css går på, at html elementer generelt får den samme style som deres parent elementer i den hierarkiske html struktur. Man kan f.eks. sætte nogle properties for body-elementet i et html dokument. Det gælder ikke for alle elementer, men i hvert fald for dem, der omhandler tekst. Hvis der er "konfliktende" styles, har nedarvede styles lav prioritet.
+
+Han introducerer også den såkaldte **universal selector**, som en slags wildcard selector, der gælder for alle html elementer, og som har en lav prioritet i forhold til andre selectors. Der opereres i øvrigt ikke med nedarvning for den universelle selector.
 
 #### Challenge #1
 
