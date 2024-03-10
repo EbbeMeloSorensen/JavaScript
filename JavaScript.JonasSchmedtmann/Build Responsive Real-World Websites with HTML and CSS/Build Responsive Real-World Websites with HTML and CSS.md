@@ -258,7 +258,21 @@ I praksis bruger man sædvanligvis altid class selectors frem for hash selectors
 
 #### Working With Colors
 
+Styling med farver. Nedenfor ses nogle eksempler på hvordan man kan specificere værdier for farve-properties såsom 'color' eller  background-color i css:
+
+```css
+color: orange;
+color: rgb(0, 255, 255);
+color: rgb(0, 255, 255, 0.3); /* med alfa-værdi for transparency */
+color: #00ffff; /* hexadecimal notation*/
+color: #0ff /* (shorthand hexadecimal notation - eksemplet her svarer til #00ffff) */
+```
+
+Han nævner også, at man kan have gavn af at bruge VS Codes color selector tool.
+
 #### Pseudo-classes
+
+...
 
 #### Styling Hyperlinks
 

@@ -2,6 +2,11 @@ h1 {
     font-size: 10px;
     text-transform: uppercase;
     font-style: italic;
+    color: orange;
+    color: #f00;
+    color: rgb(127, 255, 0);
+    color: rgba(127, 255, 0, 0.25);
+    color: #1098ad;
 }
 
 h2 {
@@ -27,10 +32,18 @@ li {
     font-size: 20px;
 }
 
-/* Denne css rule specificerer font-family for et antal selectors på én gang */
+/* Denne css rule specificerer font-family for et antal selectors på én gang
+   under anvendelse af en list selector */
 h1, h2, h3, h4, p, li {
     font-family: sans-serif;
+    color: #444;
 }
+
+/* Her har vi en anden list selector, der specificerer farve */
+h1, h2, h3 {
+    color: #1098ad;
+}
+
 
 /* Selectoren i denne css rule er en såkaldt descendant selector, der angiver, at det kun er paragraphs 
    indlejret i en footer, der skal påvirkes */
@@ -64,4 +77,14 @@ h1, h2, h3, h4, p, li {
 
 .related {
     list-style: none;
+}
+
+.main-header {
+    background-color: #f7f7f7;
+}
+
+aside {
+    background-color: #f7f7f7;
+    border-top: 5px solid #1098ad;
+    border-bottom: 5px solid #1098ad
 }
