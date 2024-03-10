@@ -1,0 +1,67 @@
+h1 {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+li {
+    font-size: 20px;
+}
+
+/* Denne css rule specificerer font-family for et antal selectors på én gang */
+h1, h2, h3, h4, p, li {
+    font-family: sans-serif;
+}
+
+/* Selectoren i denne css rule er en såkaldt descendant selector, der angiver, at det kun er paragraphs 
+   indlejret i en footer, der skal påvirkes */
+/* footer p {
+    font-size: 16px;
+} */
+
+/* Dette er en "nested" descendant selector, der kun påvirker paragraphs under headers under articles */
+/* article header p {
+    font-style: italic;
+} */
+
+/* (de 2 descendant selectors er udkommenteret, fordi han fraråder at bruge dem) */
+
+/* Her har vi en hash selector, der påvirker et individuelt html element */
+#author {
+	font-style: italic;
+    font-size: 18px;
+}
+
+/* Endu en hash selector */
+#copyright {
+    font-size: 16px;
+}
+
+/* Her har vi en class selector, der påvirker all html-elementer med en given klasse */
+.related-author {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.related {
+    list-style: none;
+}

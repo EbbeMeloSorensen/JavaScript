@@ -1,6 +1,6 @@
 ## Udemy Course: "Build Responsive Real-World Websites with HTML and CSS"
 
-Table of Contents
+**Table of Contents**
 
 [TOC]
 
@@ -13,21 +13,29 @@ https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-
 
 Kurset er et hands-on begynderkursus for HTML og CSS og dækker 4 store emner: Web Design, HTML, CSS og Responsive Design
 
-## Den røde tråd - et kompakt sammenkog af underviserens rute
+## Den røde tråd
+
+Først HTML, så CSS, så layout, så web design og layout patterns, hvor han pointerer, at det er relevant at være god til både design og implementering, og at der i øvrigt ikke er mange, der er det. Til sidst er der et stort hands-on projekt: Omnifood, hvor man bruger alle de ting, man har lært, til et web site, der er lækkert og responsivt.
 
 ### Section 1: Welcome & First Steps
 
+Indledning, Hello-World eksempel og praktiske ting såsom opsætning af udviklingsmiljø, hvor han bruger VS Code.
+
 #### Course Structure and Projects
+
+En ret god lecture, hvor han giver et overblik over strukturen for kurset, den røde tråd præsentation af de projekter, der gennemgås.
 
 #### Read Before You Start!
 
-Bare en slide med Information om kursusmateriale (såsom GitHub repository: https://github.com/jonasschmedtmann/html-css-course), community, resourcer og tips
+Bare en slide med Information om kursusmateriale (såsom GitHub repository: https://github.com/jonasschmedtmann/html-css-course), Discord community, resourcer (såsom hans eget site med masser af ressourcer: https://codingheroes.io/resources/) og tips.
 
 #### A High-Level Overview of Web Development
 
 Han fortæller om, hvordan det grundlæggende fungerer, når man browser på nettet. Man sender et web **request** til en server, som så sender et **response**, der består af **html**-filer, **css**-filer, **javascript**-filer og f.eks. billedfiler. Bemærk, at der også sendes javascript kode til klienten. Generelt gælder i øvrigt, at browseren hos klienten forstår netop disse 3 sprog (html, css og javascript), så responset skal altid være på den form. Man refererer også ofte til disse 3 teknologier som **"front-end-teknologier"**. Han forklarer, hvad et **"static website"** er - det er et website, hvor man bare kopierer de html, css og js filer, der ligger på serveren, til browseren.
 
 En **"dynamic website"** er kendetegnet ved at den løbende *genererer* de html-, css- og javascript-filer, der sendes til klienten. For et dynamisk website har man en mere sofistikeret backend, der baserer sig på **"backend-teknologier"** som f.eks. node.js, php eller python.
+
+![alt](sec_01_overview_of_web_development.png)
 
 HTML beskæftiger sig med *content*. CSS beskæftiger sig med *styling* og layout. JavaScript er selve programmeringssproget, og tillader os at *ændre* content eller styling og generelt at lave dynamiske effekter.
 
@@ -91,9 +99,11 @@ Han anbefaler at bruge et website, der heddeer CodePen: https://codepen.io/. Det
 
 ### Section 2: HTML Fundamentals
 
+Her gennemgår han HTML basics ved at kode en web page med en kort popular-style artikel om HTML med nogle billeder, links osv.
+
 #### Section Intro
 
-Dette kapitel handler om HTML, som han refererer til som det fundamentale sprog i web development
+Han præsenterer øvelsen. Han refererer i den forbindelse til HTML som det fundamentale sprog i web development, og nævner, at HTML, CSS og Java Script udgør de 3 core technologies i web development.
 
 #### Introduction to HTML
 
@@ -146,9 +156,145 @@ Ud over de VS Code extensions, han demonstrerede i indledningen, anbefaler han h
 
 #### Challenge #1
 
+Her introducerer han html elementer `aside`, som bruges til "secondary information that complements the information in the main part of the page". Opgaven går ud på over footeren at lave en aside sektion med en bulleted list, der indeholder nogle lidt mere komplekse list item elementer, der hver har et billede, et link og noget tekst.
+
 #### Challenge #2
 
+Her foreslår han at man arbejder med endnu en challenge, der handler om at lave en lille reklameside for et par sko. Han foreslår i øvrigt at gøre det på web sitet CodePen, som han nævnte tidligere: https://codepen.io/. Det virker egentlig ret let og minder om det at køre VS Code med extensionen Live Server. I øvrigt er det et fint forum til at udveksle kode og spørge om hjælp.
+
 ### Section 3: CSS Fundamentals
+
+Her gennemgår han CSS basics ved at ..?
+
+#### Section Intro
+
+Han introducerer CSS, som mestendels handler om *styling* af det indhold, der skrives i html.
+
+#### Introduction to CSS
+
+Man har som regel et antal **css rules** defineret i en særskilt fil med extensionen css, som man så kan referere til fra en html-fil. En css rule er struktureret som vist nedenfor. Den består den af en **Selector** (som kan være af flere forskellige typer) samt en **Declaration block**, der omfatter et antal **Declarations**, også bare kaldet **Styles**. En declaration består af en **css property** med en værdi.
+
+![alt](sec_03_structure_of_css_rule.png)
+
+#### Inline, Internal and External CSS
+
+Der er 3 måder hvorpå css kan specificeres: inline, internal og eksternal. Med *inline* specificerer man style i individuelle html-elementer. Med *internal* specificerer man det i en blok i html-dokumentets head-element. Med *external* specificerer man det i en særskilt css-fil, som man refererer til fra et style element i html-dokumentets head-element. External er så klart den bedste praksis.
+
+#### Styling Text
+
+Her demonstrerer han, hvordan man kan style text med forskellige css properties, som illustreret nedenfor:
+
+```css
+h1 {
+    color: blue;
+    font-size: 26px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+p {
+    font-size: 26px;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+```
+
+#### Combining Selectors
+
+Han demonstrerer, hvordan en css rule kan specificere en style for et antal forskellige typer af html elementer under anvendelse af en såkaldt **list selector**, som illustreret nedenfor:
+
+```css
+h1, h2, h3, h4, p, li {
+    font-family: sans-serif;
+}
+```
+
+Bemærk, at der stadig er tale om én selector, nemlig en list selector, som bare omhandler flere forskellige html tags.
+
+Han demonstrerer også **descendant selectors**, der kan bruges til på mere kirurgisk vis at ændre style, f.eks. for eksemplet nedenfor, hvor man sørger for, at footers skrives med lille font ved at specificere, at stylen kun handler om paragraph-elementer, der hører under footer-elementer
+
+```css
+footer p {
+    font-size: 16px;
+}
+```
+
+Han tilføjer, at man bør være varsom med at bruge descendant selectors, og nærmest bør undgå det, da det kan føre til kode, der er svær at vedligeholde. I stedet anbefaler han at bruge class selectors og id selectors.
+
+#### Class and ID Selectors
+
+Kirurgisk styring af style kan foretages med en hash selector, som gælder for et html element med et givet id, som illustreret nedenfor:
+
+```html
+<p id="author">Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+```
+
+```css
+#author {
+	font-style: italic;
+}
+```
+
+Bemærk, at det altså hedder en hash selector og ikke en id selector. Bemærk også, at den starter med et hash tag.
+
+Et element id skal være unikt i et html dokument, så hash selectoren påvirker et individuelt element i et html dokument. Attributten class derimod kan sættes til samme værdi for flere html elementer, og disse elementer kan derefter styles med den såkaldte class selector, som illustreret nedenfor:
+
+```html
+<p class="related-author">By Jim Dillon</p>
+<p class="related-author">By Jonas Schmedtmann</p>
+```
+
+```css
+.related-author {
+    font-size: 18px;
+    font-weight: bold;
+}
+```
+
+Bemærk, at class selectors starter med punktum.
+
+I praksis bruger man sædvanligvis altid class selectors frem for hash selectors, også fordi de er mere genbrugelige.
+
+#### Working With Colors
+
+#### Pseudo-classes
+
+#### Styling Hyperlinks
+
+#### Using Chrome DevTools
+
+#### CSS Theory #1: Conflicts Beween Selectors
+
+#### CSS Theory #2: Inheritance and the Universal Selector
+
+#### Challenge #1
+
+#### CSS Theory #3: The CSS Box Model
+
+#### Using Margins and Paddings
+
+#### Adding Dimensions
+
+#### Centering our Page
+
+#### Challenge #2
+
+#### CSS Theory #4: Types of Boxes
+
+#### CSS Theory # 5 Absolute Positioning
+
+#### Pseudo-elements
+
+#### Developer Skill #1: Googling and Reading Documentation
+
+#### Developer Skill #2: DEbugging and Asking Questions
+
+#### Challenge #3
+
+
+
+
 
 
 
