@@ -364,6 +364,17 @@ Han summerer med at sige, at padding er mest relevant, hvis man f.eks. har eleme
 
 #### Adding Dimensions
 
+Nu demonstrerer han, hvordan man kan sætte dimensionerne, dvs width og height for *content*-delen af html-elementerne, dvs det inderste af css box modellen. Det er f.eks. nyttigt for nogle af de elementer, der har en baggrund samt for billeder. Hvis man sætter bare den ene dimension for et billede, følger den anden sædvanligvis med for at bevare aspect ratio, men hvis der er flere selectors i spil, kan det at sætte den ene dimension gøre, at aspect ratio ændres. Det kan man rette op på ved at sætte den anden dimension til auto, hvilket gør, at aspect ratio for det originale billede bibeholdes.
+
+Han demonstrerer i øvrigt, hvordan man frem for at sætte f.eks. width til et antal pixels, som vi har gjort indtil nu, kan sætte den til en procentdel af den tilgængelige plads, som illustreret nedenfor:
+
+```
+.post-img {
+  width: 100%;
+  height: auto;
+}
+```
+
 #### Centering our Page
 
 #### Challenge #2

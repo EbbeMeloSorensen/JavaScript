@@ -113,10 +113,16 @@ article {
   background-color: #f7f7f7;
   padding: 20px;
   margin-bottom: 60px;
+  height: 80px;
 }
 
 .post-header {
   margin-bottom: 40px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
 }
 
 /* Her har vi en css rule med en almindelig element selector og 3 declarations. Bemærk de 2 nederste, der har en "shorthand property",
@@ -126,6 +132,7 @@ aside {
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
   padding: 50px 0;
+  width: 500px;
 }
 
 /* I de næste 4 css rules knytter vi en såkaldt css "pseudo-class" til en selector. I dette eksempel for at ramme udvalgte items i lister*/
