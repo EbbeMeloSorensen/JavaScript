@@ -12,7 +12,7 @@
          Det er bedre end internal css, men stadig ikke lige så godt som external css.
          I dette tilfælde overrides den style, der gælder for font size af h1 i henhold til
          den tidligere regel fra den eksterne css-fil. -->
-   <style>
+    <style>
       h1 {
         font-size: 20px;
       }
@@ -30,7 +30,6 @@
     -->
 
     <header class="main-header">
-
       <!-- For h1 headeren her ses et eksempel på brugen af såkaldt "inline css", som man sjældent bruger i praksis.
            I dette tilfælde overrides den style, der gælder for font size af h1 i henhold til
           de tidligere regler fra henholdsvis den eksterne css-fil og den interne css defineret i head-elementet. -->
@@ -45,7 +44,7 @@
     </header>
 
     <article>
-      <header>
+      <header class="post-header">
         <h2>The Basic Language of the Web: HTML</h2>
 
         <img
@@ -55,7 +54,9 @@
           width="50"
         />
 
-        <p id="author">Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+        <p id="author">
+          Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+        </p>
 
         <img
           src="img/post-img.jpg"

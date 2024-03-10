@@ -16,10 +16,13 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
@@ -31,6 +34,13 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
@@ -59,6 +69,10 @@ h1,
 h2,
 h3 {
   color: #1098ad;
+}
+
+article {
+  margin-bottom: 60px;
 }
 
 /* Selectoren i denne css rule er en såkaldt descendant selector, der angiver, at det kun er paragraphs 
@@ -98,6 +112,11 @@ h3 {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px;
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
 }
 
 /* Her har vi en css rule med en almindelig element selector og 3 declarations. Bemærk de 2 nederste, der har en "shorthand property",
@@ -106,6 +125,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
 }
 
 /* I de næste 4 css rules knytter vi en såkaldt css "pseudo-class" til en selector. I dette eksempel for at ramme udvalgte items i lister*/

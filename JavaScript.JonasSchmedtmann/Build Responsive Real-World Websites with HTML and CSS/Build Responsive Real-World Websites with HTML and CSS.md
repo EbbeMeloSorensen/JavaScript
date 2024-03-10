@@ -356,7 +356,11 @@ Han nævner, at en populær teknik er at bruge en såkaldt global reset, hvor ma
 }
 ```
 
-Så erstatter man alle default paddings og margins med 0, hvilket gør siden meget kompakt, og så kan man style den derfra.
+Så erstatter man alle default paddings og margins med 0, hvilket gør siden meget kompakt, og så kan man style den derfra. Han sætter nogle værdier for margin-bottom for nogle af de css rules, der er. Han bemærker i øvrigt, at to margener, der dækker over hinanden, som f.eks hvis man har et element med en nedre margen over et element med en øvre margen, så deler de 2 margener området, således at den største af dem bliver gældende, frem for at man har en effektiv margen svarende til summen af de 2 margener. Det kalder man for **"collapsing margins"**.
+
+Han nævner, at han foretrækker at have css rules for de største elementer såsom nav og article i toppen af sine css-filer.
+
+Han summerer med at sige, at padding er mest relevant, hvis man f.eks. har elementer med en baggrundsfarve, som gerne må fylde lidt mere, mens margin er velegnet til at skabe plads mellem elementer. Som et sidste tip anbefaler han så vidt muligt at skabe vertikal spacing under anvendelse af margin-bottom frem for margin-top og så vidt muligt prøve at undgå at mixe de 2.
 
 #### Adding Dimensions
 
