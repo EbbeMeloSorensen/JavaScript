@@ -17,6 +17,8 @@ Kurset er et hands-on begynderkursus for HTML og CSS og dækker 4 store emner: W
 
 Først HTML, så CSS, så layout, så web design og layout patterns, hvor han pointerer, at det er relevant at være god til både design og implementering, og at der i øvrigt ikke er mange, der er det. Til sidst er der et stort hands-on projekt: Omnifood, hvor man bruger alle de ting, man har lært, til et web site, der er lækkert og responsivt.
 
+Bemærk i øvrigt, at hvis man har godt styr på kerneteknologierne html, css og java script, er man uafhængig af værktøjer som Wordpress og Wix til at lave hjemmesider.
+
 ### Section 1: Welcome & First Steps
 
 Indledning, Hello-World eksempel og praktiske ting såsom opsætning af udviklingsmiljø, hvor han bruger VS Code.
@@ -377,9 +379,23 @@ Han demonstrerer i øvrigt, hvordan man frem for at sætte f.eks. width til et a
 
 #### Centering our Page
 
+Nu viser han så et trick til at centrere content. Det handler om at placere det, man gerne vil have centreret, i et container element, som passende kan være `div`, som er et general purpose container element uden semantisk betydning. 
+
 #### Challenge #2
 
+Her anbefaler han igen at man bruger de teknikker, man har lært, til at style skoreklamen fra tidligere. 
+
 #### CSS Theory #4: Types of Boxes
+
+Her taler han om, at de forskellige html elementer opfører sig forskelligt mht layout, afhængigt af hvilken **"box type"** de har. Nogle elementer har box typen **"inline"**. De er kendetegnet ved at de ikke fylder mere, end de behøver, uanset hvor meget plads der er til rådighed. Som eksempler herpå kan nævnes  html-elementerne strong og anchor. Andre elementer har box typen **"block-level"**. De er kendetegnet ved at de udfylder den plads, der er tilgængelig.. Som eksempler herpå kan nævnes . Til sidst er der elementer med box typen **"inline block"**, som kombinerer egenskaber for de 2 første box typer. Image er et eksempel på et element med box typen inline-block. Man kan override box-typen for en givet elementtype ved assigne en css declaration for propertyen display, som i eksemplet vist nedenfor:
+
+```
+nav a:link {
+  display: inline-block;
+}
+```
+
+Det kan være hensigtsmæssigt for at opnå nogle bestemte effekter.
 
 #### CSS Theory # 5 Absolute Positioning
 
@@ -387,7 +403,7 @@ Han demonstrerer i øvrigt, hvordan man frem for at sætte f.eks. width til et a
 
 #### Developer Skill #1: Googling and Reading Documentation
 
-#### Developer Skill #2: DEbugging and Asking Questions
+#### Developer Skill #2: Debugging and Asking Questions
 
 #### Challenge #3
 
