@@ -403,6 +403,24 @@ nav a:link {
 
 #### CSS Theory # 5 Absolute Positioning
 
+Normalt positioneres html elementer i henhold til såkaldt **"normal flow"**, hvilket indebærer, at de placeres i henhold til deres rækkefølge i html koden. Det er imidlertid også en mulighed at benytte såkaldt **"absolute positioning"** for et element. Sådan et element placeres under anvendelse af css declarations for top, bottom, left og right. Man skal også lave en css declaration, hvor man sætter propertyen position til absolute og nok så vigtigt sætte propertyen position til relative for det pågældende parent element, som illustreret nedenfor:
+
+```
+.container {
+  position: relative;
+}
+
+button {
+  bottom: 20 px;
+  right: 20 px;
+  position: absolute;
+}
+```
+
+Han nævner, at man sædvanligvis kun bruger absolute positioning til finishing touches og ikke som bærende teknik for layout.
+
+Han kommer i øvrigt med et sjovt lille hint, som går på at man kan trykke Windows tast + punktum for at lave en emoji karakter som en del af teksten f.eks. i en button element.
+
 #### Pseudo-elements
 
 #### Developer Skill #1: Googling and Reading Documentation
