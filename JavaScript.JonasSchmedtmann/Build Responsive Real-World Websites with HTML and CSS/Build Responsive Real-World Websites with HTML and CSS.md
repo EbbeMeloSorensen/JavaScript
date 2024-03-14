@@ -387,15 +387,19 @@ Her anbefaler han igen at man bruger de teknikker, man har lært, til at style s
 
 #### CSS Theory #4: Types of Boxes
 
-Her taler han om, at de forskellige html elementer opfører sig forskelligt mht layout, afhængigt af hvilken **"box type"** de har. Nogle elementer har box typen **"inline"**. De er kendetegnet ved at de ikke fylder mere, end de behøver, uanset hvor meget plads der er til rådighed. Som eksempler herpå kan nævnes  html-elementerne strong og anchor. Andre elementer har box typen **"block-level"**. De er kendetegnet ved at de udfylder den plads, der er tilgængelig.. Som eksempler herpå kan nævnes . Til sidst er der elementer med box typen **"inline block"**, som kombinerer egenskaber for de 2 første box typer. Image er et eksempel på et element med box typen inline-block. Man kan override box-typen for en givet elementtype ved assigne en css declaration for propertyen display, som i eksemplet vist nedenfor:
+Her taler han om, hvilke forskellige typer af **"boxes"**, der eksisterer i CSS box modellen. Mht layout opfører et html element sig på en måde, der afhænger af hvilken **"box type"** det har. Der opereres med de 3 forskellige box types: **"block-level"**, **"inline"** og **"inline block"**. De forskellige typer af html elementer har som udgangspunkt en default box type, som man imidlertid kan override med en css rule, hvis man ønsker en bestemt effekt såsom at placere anchors under hinanden i stedet for efter hinanden, eller såsom at placere list items efter hinanden i stedet for under hinanden.
+
+Elementer med box typen *block-level* er kendetegnet ved at de udfylder den plads, der er tilgængelig. Block level elementer kan ikke være side om side men placeres *under* hinanden. De fleste html elementer har block level som default box type. Som eksempler herpå kan nævnes body, main, header, footer, section, nav, aside, div, h1-h6, p, ul, ol, li, article osv.
+
+Elementer med box typen *inline* er kendetegnet ved at de ikke fylder mere end de behøver, uanset hvor meget plads der er til rådighed. I modsætning til block level elementer danner de ikke et line break efter sig. CSS declarations for width og height påvirker ikke inline elementer. CSS declarations for padding og margin påvirker kun inline elementer fsa den horisontaledel, dvs for left og right. Som eksempler herpå kan nævnes html-elementerne strong, a, em, button osv.
+
+Til sidst er der elementer med box typen inline block, som kombinerer egenskaber for de 2 første box typer. Man kan f.eks. få vertikale margins og paddings til at gælde for inline elementer ved at sætte deres box type til inline block. Image er et eksempel på et element med box typen inline-block. Man kan override box-typen for en givet elementtype ved assigne en css declaration for propertyen display, som i eksemplet vist nedenfor:
 
 ```
 nav a:link {
   display: inline-block;
 }
 ```
-
-Det kan være hensigtsmæssigt for at opnå nogle bestemte effekter.
 
 #### CSS Theory # 5 Absolute Positioning
 
