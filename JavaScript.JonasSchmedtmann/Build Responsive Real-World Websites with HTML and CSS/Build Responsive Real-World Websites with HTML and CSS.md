@@ -166,7 +166,7 @@ Her foreslår han at man arbejder med endnu en challenge, der handler om at lave
 
 ### Section 3: CSS Fundamentals
 
-Her gennemgår han CSS basics ved at ..?
+Her gennemgår han CSS basics ved at arbejde videre på den artikel, der også blev brugt i de indledende kapitler.
 
 #### Section Intro
 
@@ -276,7 +276,7 @@ Han nævner også, at man kan have gavn af at bruge VS Codes color picker tool. 
 
 Man kan knytte en såkaldt **pseudo class** til en selector for at påvirke udvalgte child elementer for et givet parent element. Det kan f.eks. bruges til at style en liste med alternerende farver som i eksemplet nedenfor:
 
-```
+```css
 li:nth-child(odd) {
   color: grey;
 }
@@ -284,7 +284,7 @@ li:nth-child(odd) {
 
 Pseudo classes er specielt brugbare, når alle child elementer for et givet element er ens, som f.eks. for en list, men er ikke så intuitive, når et element har forskellige child elements, som f.eks. i en tilfælde som dette:
 
-```
+```css
 article p:first-child {
   color: red;
 }
@@ -330,7 +330,7 @@ Han introducerer the **"CSS Box Model"** og nævner, at det er et af de mest fun
 
 Man bruger padding ved at skrive en css declaration som den nedenstående, som så gælder hele vejen rundt om et givet element:
 
-```
+```css
 padding: 20px;
 ```
 
@@ -342,7 +342,7 @@ Man kan holde musen over de forskellige områder for at fremhæve de tilsvarende
 
 Padding kan også sættes forskellige for de forskellige sider, som illustreret nedenfor:
 
-```
+```css
 padding: 20px; /* Gælder hele vejen rundt */
 padding-left: 40px; /* Overrider for venstre side (de andre 3 sider har så stadig en padding på 20px) */
 padding-right: 40px; /* Overrider for højre side */
@@ -351,7 +351,7 @@ padding: 20px 40px; /* Shorthand property, der giver samme resultat som de ovens
 
 Han nævner, at en populær teknik er at bruge en såkaldt global reset, hvor man for den universelle selector sætter margin og padding til 0, som vist nedenfor;
 
-```
+```css
 * {
   margin: 0;
   padding: 0;
@@ -370,7 +370,7 @@ Nu demonstrerer han, hvordan man kan sætte dimensionerne, dvs width og height f
 
 Han demonstrerer i øvrigt, hvordan man frem for at sætte f.eks. width til et antal pixels, som vi har gjort indtil nu, kan sætte den til en procentdel af den tilgængelige plads, som illustreret nedenfor:
 
-```
+```css
 .post-img {
   width: 100%;
   height: auto;
@@ -395,7 +395,7 @@ Elementer med box typen *inline* er kendetegnet ved at de ikke fylder mere end d
 
 Til sidst er der elementer med box typen inline block, som kombinerer egenskaber for de 2 første box typer. Man kan f.eks. få vertikale margins og paddings til at gælde for inline elementer ved at sætte deres box type til inline block. Image er et eksempel på et element med box typen inline-block. Man kan override box-typen for en givet elementtype ved assigne en css declaration for propertyen display, som i eksemplet vist nedenfor:
 
-```
+```css
 nav a:link {
   display: inline-block;
 }
@@ -405,7 +405,7 @@ nav a:link {
 
 Normalt positioneres html elementer i henhold til såkaldt **"normal flow"**, hvilket indebærer, at de placeres i henhold til deres rækkefølge i html koden. Det er imidlertid også en mulighed at benytte såkaldt **"absolute positioning"** for et element. Sådan et element placeres under anvendelse af css declarations for top, bottom, left og right. Man skal også lave en css declaration, hvor man sætter propertyen position til absolute og nok så vigtigt sætte propertyen position til relative for det pågældende parent element, som illustreret nedenfor:
 
-```
+```css
 .container {
   position: relative;
 }
@@ -423,17 +423,101 @@ Han kommer i øvrigt med et sjovt lille hint, som går på at man kan trykke Win
 
 #### Pseudo-elements
 
+"Pseudo elements are elements that don't exist in the HTML but that we can still select and style in CSS". Nedenfor ses et eksempel, hvor man styler første bogstav i en heading med pseudo-elemetet first-letter:
+
+```css
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+```
+
+I eksemplet nedenfor bruger vi pseudo-elementet first-line til at style den første linie i de paragraf elementer, der kommer lige efter h3 elementer. Vi bruger i øvrigt også en såkaldt **"next sibling selector"**, som ikke targetter selve h3 elementer men derimod de efterfølgende p elementer på samme niveau som h3 elementerne:
+
+```css
+h3 + p::first-line {
+  color: red;
+}
+```
+
+I eksemplet nedenfor bruger vi pseudo-elemetet after til at placere en lille tekst label efter et h2 element. Bemærk, at vi har en content property og at vi har ændret box type til inline-block, for at kunne bruge vertikal padding, da pseudo-elementer pr default er inline. Desuden bruger vi absolute positioning samt negative tal for positionen.
+
+```css
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+```
+
 #### Developer Skill #1: Googling and Reading Documentation
+
+Her giver han tips til at søge efter HTML og CSS tips med Google og fremhæver StackOverflow samt MDN (developer.mozilla.org).
 
 #### Developer Skill #2: Debugging and Asking Questions
 
+Her giver han tips til at debugge CSS. Ofte kommer der fejl ud af at man glemmer at lukke sine html elementer med et closing tag. Man kan også bruge et HTML validator tool som f.eks. https://validator.w3.org/ til at checke om ens html overhovedet er valid. Han anbefaler også at bruge https://www.diffchecker.com/ som er et general purpose tool til at sammenligne tekstfiler som i nogle situationer kan være nyttigt over for HTML- eller CSS-filer.
+
+I CSS er problemet ofte konfliktende selectors. Her er Chrome Dev Tools ret nyttige til at inspicere, hvilke selectors, der gælder.
+
 #### Challenge #3
 
+Her anbefaler han igen at man bruger de teknikker, man har lært, til at style skoreklamen fra tidligere. 
 
+### Section 4: Layouts: Floats, Flexbox, and CSS Grid Fundamentals
 
+Dette kapitel handler om layouts med floats, flexbox og css grid.
 
+#### Section Intro
 
+#### The 3 Ways of Building Layouts
 
+#### Using Floats
 
+#### Clearing Floats
 
+#### Building a Simple FLoat Layout
+
+#### box-sizing: border-box
+
+#### Challenge #1
+
+#### Introduction to Flexbox
+
+#### A Flexbox Overview
+
+#### Spacing and Aligning Flex Items
+
+#### The flex Property
+
+#### Adding Flexbox to Our Project
+
+#### Building a SImple Flexbox Layout
+
+#### Challenge #2
+
+#### Introduction to CSS Grid
+
+#### A CSS Grid Overview
+
+#### Sizing Grid Columns and Rows
+
+#### Placing and Spanning Grid Items
+
+#### Aligning Grid Items and Tracks
+
+#### Building a Simple CSS Grid Layout
+
+#### Challenge #3
 
