@@ -477,17 +477,41 @@ Her anbefaler han igen at man bruger de teknikker, man har lært, til at style s
 
 ### Section 4: Layouts: Floats, Flexbox, and CSS Grid Fundamentals
 
-Dette kapitel handler om layouts med floats, flexbox og css grid.
+Her gennemgår han layout teknikker ved at ..?.
 
 #### Section Intro
 
 #### The 3 Ways of Building Layouts
 
+**"Page layout"** handler om hvordan man arrangerer **"components"** på en web page, mens **"Component layout"** handler om hvordan man arrangerer html elementer i en komponent eller. Traditionelt layouter man under anvendelse af **"float layouts"**, som ikke bruges så meget mere. Til gengæld bruger man i stor stil **"Flexbox"** og **"CSS  Grid"** til layout. Flexbox er god til en-dimensionelle rækker mens css grid er god til 2-dimensionelle grids.
+
 #### Using Floats
+
+Dette er som nævnt den traditionelle måde at layoute på. Man kan gøre et html element til et floated element ved at targette det med en css rule med en declaration, hvor propertyen float er sat til f.eks. left eller right (ikke top eller bottom). Det minder lidt om absolute positioning derved at elementet kommer til at være "out of flow", men det influerer dog på andre elementer, der vil "wrappe rundt om" det floatede element - det minder om word, hvor man kan lade noget tekst flyde rundt om et billede. Der gælder i øvrigt, at container elementer ikke vil tilpasse deres højde til et floated element - det kan medføre, at højden af container elementet kollapser, hvis det kun indeholder floatede elementer.
+
+I praksis kan man f.eks. bruge denne layout metode til at placere block-level elementer horisontalt efter hinanden, hvor de ellers ville blive placeret under hinanden, da de jo normalt udfylder hele den tilgængelige plads.
 
 #### Clearing Floats
 
-#### Building a Simple FLoat Layout
+Her beskriver han nogle teknikker til at løse problemet med at floated elements kan få deres container element til at kollapse. En af teknikkerne refererer han til som "the clearfix hack", som I mange år har været brugt i CSS communityet. Det ser ud som vist nedenfor:
+
+```
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+```
+
+Det er mest relevant at kende, hvis man kommer til at skulle vedligeholde gamle css-filer.
+
+#### Building a Simple Float Layout
+
+Han indleder med at anbefale midlertidigt at ændre baggrundsfarven for sine elementer så det er tydeligt hvor de er.
+
+Så styler han artiklen om html ved at lade article-elementet floate til venstre, aside elementet floate til højre. Det udvirker så umiddelbart, at footer-elementet placeres lige under aside-elementet, fordi det wrapper rundt om det, men det kan han fixe ved at associere footer elementet med en style, hvor clear er sat til both.
+
+Han siger, at det ikke er super intuitivt at arbejde med float layout, hvilket er en af hovedårsagerne til at man introducerede flexbox og css grid.
 
 #### box-sizing: border-box
 
