@@ -537,13 +537,41 @@ Han nævner i øvrigt, at det er en teknik, som rigtig mange benytter sig af - r
 }
 ```
 
-
-
 #### Challenge #1
+
+Her anbefaler han igen, at man bruger de teknikker, man har lært, til at style skoreklamen fra tidligere. 
 
 #### Introduction to Flexbox
 
+At bruge flexbox foregår ved at man styler et container element ved at sætte display-propertyen (dvs den samme property, som kan bruges til at override box type for et element) for elementet til `flex`, som illustreret nedenfor
+
+```css
+.container {
+  display: flex;
+}
+```
+
+Det influerer så på, hvordan child elementerne for pågældende container element arrangeres. Han demonstrerer, hvordan man f.eks. på denne måde kan ændre på layout for et container element med et antal div-elementer, hvor de pr default placeres under hinanden, men med flexbox placeres horisontalt i forlængelse af hinanden. Alle elementer får herved en højde svarende til det højeste element.
+
+Han demonstrerer herefter, hvorledes man let f.eks. kan aligne child elementer ved at sætte forskellige propertyen på parent containeren, som vist nedenfor:
+
+```css
+.container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between;
+  justify-content: space-evenly; */
+  justify-content: center; 
+}
+```
+
 #### A Flexbox Overview
+
+Her giver han en mere grundig gennemgang af flexbox. Der gælder reglerne vist nedenfor:
+
+![alt](sec_04_flex_box.png)
+
+
 
 #### Spacing and Aligning Flex Items
 
