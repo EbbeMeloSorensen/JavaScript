@@ -48,6 +48,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 p {
@@ -126,6 +127,7 @@ article {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 .main-header {
@@ -158,8 +160,8 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
+  box-sizing: border-box;
 }
 
 /* I de næste 4 css rules knytter vi en såkaldt css "pseudo-class" til en selector. I dette eksempel for at ramme udvalgte items i lister*/

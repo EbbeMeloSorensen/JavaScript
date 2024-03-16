@@ -298,9 +298,9 @@ Pseudo classes kan f.eks. bruges til at style hyperlinks ud fra forskellige stat
 
 #### Using Chrome DevTools
 
-Man aktiverer development tools i sin Chrome browser ved at højreklikke et sted på web pagen og så klikke  "Inspect" eller "Undersøg" i context menuen. Så får man et view med en masse forskellige tabs.
+Man aktiverer development tools i sin Chrome browser ved at højreklikke på et element eller bare et sted på web pagen og så klikke "Inspect" eller "Undersøg" i context menuen. Så får man et view med en masse forskellige tabs.
 
-Den første tab hedder **"Elements"**, og her kan man se den html kode, der gør sig gældende. Man kan endda få highlighted html elementer i viewet ved at hovere musen over elementets underliggende html element i html-koden, hvilket er ret nyttigt. Elements-tabben har også en vigtig sektion, der hedder "Styles" eller, hvor man kan inspicere, hvilke css rules der påvirker et givet element, som man klikker på ovre i html-kode-viewet. Man kan endda manipulere stylingen ved at tilføje, aktivere og deaktivere styles med Dev Tools, hvilket kan være nyttigt for at teste ting under udvikling. Desuden kan man simulere states som f.eks. hover for et element for at force en given styling.
+Den første tab hedder **"Elements"**, og her kan man f.eks. se html koden for siden. Man kan endda få highlighted html elementer og deres margin og padding i viewet ved at hovere musen over elementets underliggende html element i html-koden, hvilket er ret nyttigt. Elements-tabben har også en vigtig sektion, der hedder "Styles" eller, hvor man kan inspicere, hvilke css rules der påvirker et givet element, som man klikker på ovre i html-kode-viewet. Man kan endda manipulere stylingen ved at tilføje, aktivere og deaktivere styles med Dev Tools, hvilket kan være nyttigt for at teste ting under udvikling. Desuden kan man simulere states som f.eks. hover for et element for at force en given styling. Styles sektionen omfatter også den såkaldte css box model beskrevet senere, som kan bruges til inspektion af dimsionerne af content, padding, border og margin for et element. 
 
 Han kommer ikke omkring de andre tabs her, men han nævner, at DevTools er "absolutely essential" for at lave et web site på en effektiv måde.
 
@@ -485,6 +485,8 @@ Her gennemgår han layout teknikker ved at ..?.
 
 **"Page layout"** handler om hvordan man arrangerer **"components"** på en web page, mens **"Component layout"** handler om hvordan man arrangerer html elementer i en komponent eller. Traditionelt layouter man under anvendelse af **"float layouts"**, som ikke bruges så meget mere. Til gengæld bruger man i stor stil **"Flexbox"** og **"CSS  Grid"** til layout. Flexbox er god til en-dimensionelle rækker mens css grid er god til 2-dimensionelle grids.
 
+![alt](sec_04_3_types_of_layout.png)
+
 #### Using Floats
 
 Dette er som nævnt den traditionelle måde at layoute på. Man kan gøre et html element til et floated element ved at targette det med en css rule med en declaration, hvor propertyen float er sat til f.eks. left eller right (ikke top eller bottom). Det minder lidt om absolute positioning derved at elementet kommer til at være "out of flow", men det influerer dog på andre elementer, der vil "wrappe rundt om" det floatede element - det minder om word, hvor man kan lade noget tekst flyde rundt om et billede. Der gælder i øvrigt, at container elementer ikke vil tilpasse deres højde til et floated element - det kan medføre, at højden af container elementet kollapser, hvis det kun indeholder floatede elementer.
@@ -514,6 +516,28 @@ Så styler han artiklen om html ved at lade article-elementet floate til venstre
 Han siger, at det ikke er super intuitivt at arbejde med float layout, hvilket er en af hovedårsagerne til at man introducerede flexbox og css grid.
 
 #### box-sizing: border-box
+
+Her snakker han om hvordan man kan fixe små problemer med box modellen såsom at content ikke er alignet som man gerne vil have det. Ofte skyldes det den default adfærd (kaldet **"content-box"**), som box modellen har med at et elements bredde og højde fås ved at addere værdierne for content, padding, border og margin. Hvis man ændrer adfærden til **"border-box"** som vist nedenfor, tvinger man så at sige boxens højde og bredde til at være som specificeret i css. Bemærk, at det foregår ved at reducere størrelsen af content, dvs den inderste del af box modellen. 
+
+```css
+aside {
+  box-sizing: border-box;
+}
+```
+
+Princippet er illustreret i figuren nedenfor:
+
+![alt](sec_04_box_sizing.png)
+
+Han nævner i øvrigt, at det er en teknik, som rigtig mange benytter sig af - rent faktisk er det normalt at benytte det for alle elementer ved at placere stylen i den universelle selector, som vist nedenfor:
+
+```
+* {
+  box-sizing: border-box;
+}
+```
+
+
 
 #### Challenge #1
 
