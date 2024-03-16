@@ -571,9 +571,15 @@ Her giver han en mere grundig gennemgang af flexbox. Der gælder reglerne vist n
 
 ![alt](sec_04_flex_box.png)
 
+Han siger, at man med en flexbox opererer med en **"main axis"**. som kan være horisontal eller vertikal. Den vinkelrette akse kaldes **"cross axis"**. Nedenfor er der et nyttigt cheat sheet. Bemærk, at højre side handler om at man kan sætte properties på child elementerne, som man i øvrigt kan referere til som **"flex items"**, når de befinder sig inde i en **"flex container"**.
 
+![alt](sec_04_flexbox_cheat_sheet.png)
 
 #### Spacing and Aligning Flex Items
+
+Her begynder vi så at arbejde med flexbox. Først demonstrerer han, hvordan man kan override flex alignment for udvalgte child elementer. Dernæst demonstrerer han, hvordan man kan ændre rækkefølgen af elementer. Han nævner i øvrigt, at dette kan være relevant i forbindelse med at tilpasse et layout i forhold til en mobil skærm, der jo sædvanligvis er mindre end for f.eks. en monitor.
+
+Så demonstrerer han, hvordan man kan sætte en gap property for flex containeren for at lave mellemrum mellem flex items.
 
 #### The flex Property
 

@@ -45,7 +45,31 @@
         /* justify-content: space-between;
         justify-content: space-evenly; */
         justify-content: center;
+        gap: 30px;
       }
+
+      .el {
+        /* DEFAULTS
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto; */
+      }
+
+      /* Override af flex alignment for det første element */
+      .el--1 {
+        align-self: flex-start;
+      }
+
+      /* Override af flex alignment for det femte element */
+      .el--5 {
+        align-self: stretch;
+      }
+
+      /* Override af rækkefølge, hvor 6. element placeres før de andre (default order er 0) */
+      .el--6 {
+        order: -1;
+      }
+
     </style>
   </head>
   <body>
