@@ -583,9 +583,37 @@ Så demonstrerer han, hvordan man kan sætte en gap property for flex containere
 
 #### The flex Property
 
+Her introducerer han den såkaldte **"flex"** property, som kan sættes for child elementer i en flex container. Propertyen er faktisk en shorthand property, der dækker over de 3 properties vist nedenfor inkl deres default værdier:
+
+```css
+.el {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+```
+
+Flex basis bruger man sædvanligvis til at sætte bredden af flex elementer - det er faktisk mere almindeligt at bruge flex basis end at bruge width. Flex basis kan ses som en anbefaling snarere end et dekret - hvis et child elements bredde er større end flex basis, ændres dets bredde ikke, men hvis bredden er mindre, forlænges det, så det får en bredde svarende til flex basis. Det gælder dog kun, hvis bredden af flec containeren er stor nok. I modsat fald sker der pr default det at child elementerne shrinkes så de kan være i containeren (det fremgår f.eks. hvis man sætter flex-basis til et stort tal). Det er i øvrigt konkret pga propertyen flex-shrink og dens default værdi på 1. Ændrer man flex-shrink til 0 forhindrer man denne shrinking, men så kan der ske det at rækken af child elementer vokser ud af containeren. Den sidste af de 3 properties: flex-grow er en art modsætning til flex-shrink, for her får child elementerne lov til at gro indtil de fylder den tilgængelige plads ud. Pr default er flex-grow-værdien for hvert child element 1 og det indebærer, at de kommer til at fylde lige meget, men hvis man f.eks. bare sætter værdien for ét af elementerne til 2 får den lov at fylde dobbelt så meget som de andre ud af den tilgængelige plads. På den måde minder det rigtigt meget om wpf, hvor man bruger width: 2*, width: * til samme effekt.
+
+Til sidst nævner han, at man i praksis som regel altid bruger shorthand propertyen fremfor at bruge de 3 properties direkte, som illustreret nedenfor:
+
+```css
+.el {
+  flex: 1 0 200px;
+}
+```
+
+Hvis man f.eks. kun vil ændre flex-grow, skriver man det som vist nedenfor, hvor den så bruger default værdierne for flex-shrink og flex-basis:
+
+```css
+.el {
+  flex: 1;
+}
+```
+
 #### Adding Flexbox to Our Project
 
-#### Building a SImple Flexbox Layout
+#### Building a Simple Flexbox Layout
 
 #### Challenge #2
 
