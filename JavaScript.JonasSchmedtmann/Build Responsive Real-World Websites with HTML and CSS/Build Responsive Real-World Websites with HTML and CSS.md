@@ -613,7 +613,13 @@ Hvis man f.eks. kun vil ændre flex-grow, skriver man det som vist nedenfor, hvo
 
 #### Adding Flexbox to Our Project
 
+Nu demonstrerer han så hvordan vi kan bruge flexbox for layoutet på artiklen i stedet for Float. Det bliver temmelig rodet i  css filen hvor han i vidt omfang bare overrider tidligere css rules. Han styler main-header, author-box og aside-sektionen, som han i øvrigt efterlader i bunden, selv om han havde hevet den op i højre side.
+
 #### Building a Simple Flexbox Layout
+
+Her demonstrerer han så hvordan vi kan lave et mere overordet flexbox layout, hvor aside-sektionen f.eks. kommer op i højre side.
+
+Specifikt laver han en overordnet flex box, der indeholder de 2 elementer article og aside. Så sætter han asiden elementetes bredde til 300px, et gap på 75px og lader artiklen fylde så meget den kan ved at sætte dens flex-grow property til 1. I øvrigt sætter han flex boxens align-items property til flex-start for at undgå, at den bliver lige så lang som artiklen, da default værdien for align-items er stretch.
 
 #### Challenge #2
 
