@@ -477,9 +477,11 @@ Her anbefaler han igen at man bruger de teknikker, man har lært, til at style s
 
 ### Section 4: Layouts: Floats, Flexbox, and CSS Grid Fundamentals
 
-Her gennemgår han layout teknikker ved at ..?.
+Her gennemgår han layout teknikker med fokus især på flexbox og css grid og demonstrerer det ved at style artiklen fra de tidligere kapitler og desuden ved at lege med nogle små playgrounds med nogle farvede kasser. Bemærk, at der er links til de 2 playgrounds fra html-artikel-eksempler.
 
 #### Section Intro
+
+Han siger, at kapitel 3 handlede meget om basic css, mens dette kapitel tager det videre til næste niveau, der handler om at bruge CSS til layout for web pages.
 
 #### The 3 Ways of Building Layouts
 
@@ -765,5 +767,59 @@ Han bemærker i øvrigt, at keywordet align generelt handler om *vertikal* align
 
 #### Building a Simple CSS Grid Layout
 
+Her restyler han artiklen om html ved at bruge css grid til det overordnede layout i stedet for flexbox. Bemærk, at han bibeholder det med at nogle af elementerne er stylet under anvendelse af flexbox, der jo lever fint i symbiose med css grid.
+
+Han nævner i øvrigt, at man så vidt muligt bør lave spacing med css grid styles såsom row-gap osv frem for at bruge margins, da det er mere rent og lettere at vedligeholde.
+
 #### Challenge #3
+
+Her anbefaler han igen, at man bruger de teknikker, man har lært, til at style skoreklamen fra tidligere.
+
+### Section 5: Web Design Rules and Framework
+
+HVAD ER DEN RØDE TRÅD I DETTE KAPITEL?
+
+#### Section Intro
+
+De første 4 kapitler handlede om web *development*, men dette kapitel handler om web *design*. Han siger, at det er relevant som udvikler at være god til begge dele, og at mange udviklere kun er god til en af delene.
+
+#### Project Overview
+
+#### Overview of Web Design and Website Personalities
+
+#### Web Design Rules #1: Typography
+
+#### Implementing Typography
+
+#### Web Design Rules #2: Colors
+
+#### Implementing Colors
+
+#### Web Design Rules #3: Images and Illustrations
+
+#### Web Design Rules #4: Icons
+
+#### Implementing Icons
+
+#### Web Design Rules #5: Shadows
+
+#### Web Design Rules #6: Border-radius
+
+#### Implementing Border-radius
+
+#### Web Design Rules #7: Whitespace
+
+#### Web Design Rules #8: Visual Hierarchy
+
+#### Implementing Whitespace and Visual Hierarchy
+
+#### Web Design Rules #9: User Experience (UX)
+
+#### The Website-Personalities-Framework
+
+#### The Missing Piece: Steal Like An Artist!
+
+
+
+
 
