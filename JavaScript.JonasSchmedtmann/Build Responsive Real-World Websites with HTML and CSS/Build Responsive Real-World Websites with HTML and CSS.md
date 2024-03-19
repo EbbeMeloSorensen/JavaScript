@@ -623,7 +623,36 @@ Specifikt laver han en overordnet flex box, der indeholder de 2 elementer articl
 
 #### Challenge #2
 
+Her anbefaler han igen, at man bruger de teknikker, man har lært, til at style skoreklamen fra tidligere. Introduction to CSS Grid
+
 #### Introduction to CSS Grid
+
+Her kører han lige en hands-on introduktion til CSS Grid.
+
+Indledningsvis demonstrerer han, hvordan man kan skjule et helt element med en style, hvor propertyen display er sat til none, som illustreret nedenfor:
+
+```css
+.container--2 {
+  display: none;
+}
+```
+
+(det gør han bare for at få den anden conatiner af vejen). Så styler han den synlige container og dennes items med følgende css rule:
+
+```css
+.container--2 {
+  display: grid;
+  grid-template-columns: 200px 200px 150px 150px;
+  grid-template-rows: 300px 200px;
+  /* gap: 30px; */
+  column-gap: 30px;
+  row-gap: 60px;  
+}
+```
+
+Bemærk, at der laves lige så mange rækker, som det er nødvendigt for at akkomodere de elementer, man har, så siden der er 4 kolonner og 8 items laves der 2 rækker. Hvis man tilføjer et 9. item laves der en række mere, som i øvrigt bliver så lav som muligt siden der kun er en specifikationer for højde for de 2 første rows i eksemplet.
+
+Lige som man siger at man har en flex container med flex items siger man også, at man har en grid container med grid items.
 
 #### A CSS Grid Overview
 
