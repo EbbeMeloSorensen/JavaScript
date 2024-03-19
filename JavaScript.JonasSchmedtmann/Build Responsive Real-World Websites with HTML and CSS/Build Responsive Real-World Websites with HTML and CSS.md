@@ -660,7 +660,7 @@ Lige som man siger at man har en flex container med flex items siger man også, 
 
 Her gennemgår han noget teori og terminologi omkring css grids. Han understreger, at den ikke erstatter men derimod supplerer flexbox.
 
-![alt](sec_04_css_gridpng)
+![alt](sec_04_css_grid.png)
 
 Han introducerer termerne **"grid line"**,  **"grid cell"**, **"grid track"** og **"column track"**. Lige som for flex box viser han nedenstående cheat sheet for css grid:
 
