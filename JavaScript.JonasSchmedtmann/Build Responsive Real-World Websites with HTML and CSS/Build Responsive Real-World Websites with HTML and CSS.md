@@ -656,11 +656,112 @@ Lige som man siger at man har en flex container med flex items siger man også, 
 
 #### A CSS Grid Overview
 
+Her gennemgår han noget teori og terminologi omkring css grids. Han understreger, at den ikke erstatter men derimod supplerer flexbox.
+
+![alt](sec_04_css_gridpng)
+
+Han introducerer termerne **"grid line"**,  **"grid cell"**, **"grid track"** og **"column track"**. Lige som for flex box viser han nedenstående cheat sheet for css grid:
+
+![alt](sec_04_cssgrid_cheat_sheet.png)
+
 #### Sizing Grid Columns and Rows
+
+Han demonstrerer, hvordan man kan sørge for at en column udfylder den tilgængelige plads i stedet for at fylde et bestemt antal pixels ved at bruge `fr` i værdierne i stedet for `px`, som vist nedenfor:
+
+```css
+.container--1 {
+  grid-template-columns: 200px 200px 1fr 1fr;
+}
+```
+
+Det minder meget om flexbox hvor man kan sætte flex-grow værdierne for de forskellige child elementer og wpf hvor man bruger wildcards. Det virker på samme måde at man f.eks. kan skrive `2fr` hvis et element skal fylde dobbelt så meget af den tilgængelige plads end et element, hvor der står `1fr`.
+
+Man kan også skrive `auto` hvis en kolonne kun skal fylde så meget som den lige akkurat behøver. Det er igen helt ækvivalent til wpf.
+
+Han præsenterer også lige en alternativ notation, som især er nyttig, når der er mange columns:
+
+```css
+.container--1 {
+  grid-template-columns: repeat(4, 1fr);
+}
+```
+
+Man kan også bruge `fr` og `auto` for rækker, og så kan det være gavnligt at sætte højdn for grid containeren - ellers er det i praksis største element, der afgør, hvad `1fr` svarer til.
 
 #### Placing and Spanning Grid Items
 
+Her demonstrerer han, hvordan man placerer et grid item hvor man vil i stedet for at det sker automatisk. Det gør man ved at sætte nogle properties på de enkelte grid items, som i eksemplet nedenfor:
+
+```css
+.el--8 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+```
+
+De resterende grid items bliver bare placeret, hvor der er plads, dvs hvor der ikke er nogen "reservation" til et givet grid item.
+
+Eksemplet ovenfor kunne man i ørigt bare have skrevet således:
+
+```css
+.el--8 {
+  grid-column: 2;
+  grid-row: 1;
+}
+```
+
+fordi default placering er, at man fylder pågældende celle ud, men man kan også opnå en placering, hvor et grid item spanner flere grid cells ved at skrive som vist nedenfor:
+
+```css
+.el--2 {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+```
+
+Nedenfor vises en ækvivalent notation, hvor man angiver antallet af celler, et grid item skal spanne over, snarere end nummeret på en grid line:
+
+```css
+.el--2 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+```
+
+Man kan også skrive `-1` til højre for skråstregen for at angive, at pågældende grid item skal spanne helt over til enden af grid containeren, som vist nedenfor:
+
+```css
+.el--2 {
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+```
+
+-1 er faktisk nummeret på grid linien yderst til højre talt fra venstre, hvor næstyderste grid linie hedder -2 og så fremdelse, så man kan f.eks. også angive, at et grid item skal spanne frem til næstsidste grid line, som vist nedenfor:
+
+```css
+.el--2 {
+  grid-column: 2 / -2;
+  grid-row: 1;
+}
+```
+
+Man kan i øvrigt også overlappe grid items, selv om det sjældent er relevant i praksis.
+
 #### Aligning Grid Items and Tracks
+
+Her demonstrerer han, hvordan man kan aligne cells og deres content inde i sin grid container, hvilket er særligt relevant, når der er mere plads, end der er brug for, f.eks. når de forskellige tracks har faste værdier for bredde og højde.
+
+Til sidst demonstrerer han, hvordan man ligesom for flex box kan override de generelle settings for children, f.eks med en styling som den vist nedenfor:
+
+```
+.el--3 {
+  align-self: end;
+  justify-self: end;
+}      
+```
+
+Han bemærker i øvrigt, at keywordet align generelt handler om *vertikal* alignment, mens keywordet justify generelt handler om *horisontal* alignment.
 
 #### Building a Simple CSS Grid Layout
 
