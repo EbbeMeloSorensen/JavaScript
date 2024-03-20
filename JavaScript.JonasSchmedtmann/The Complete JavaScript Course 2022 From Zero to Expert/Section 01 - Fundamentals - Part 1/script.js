@@ -27,8 +27,7 @@ let null1 = null; // Null
 console.log(typeof number1); // typeof operator
 
 var d = 3; // Declaring a variable using var. Legal but deprecated
-           // (var is function scoped while let is block scoped)
-
+           // (var is "function scoped" while let is "block scoped")
 
 // Basic operators
 
