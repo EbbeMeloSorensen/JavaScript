@@ -17,6 +17,8 @@ Kurset er et hands-on begynderkursus for JavaScript
 
 #### Course Structure and Projects
 
+Han præsenterer kursets indhold. Han nævner i øvrigt, at JavaScript er det mest populære programmeringssprog i verden.
+
 #### Read Before You Start!
 
 #### Watch Before You Start
