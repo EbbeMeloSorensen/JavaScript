@@ -1,23 +1,21 @@
 ## Udemy Course: "Build Responsive Real-World Websites with HTML and CSS"
 
-**Table of Contents**
+Instructor: Jonas Schmedtman
 
-[TOC]
-
-### Instructor: Jonas Schmedtman
-
-https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/
+https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3
 
 
 ## Summary
 
 Kurset er et hands-on begynderkursus for HTML og CSS og dækker 4 store emner: Web Design, HTML, CSS og Responsive Design
 
-## Den røde tråd
-
 Først HTML, så CSS, så layout, så web design og layout patterns, hvor han pointerer, at det er relevant at være god til både design og implementering, og at der i øvrigt ikke er mange, der er det. Til sidst er der et stort hands-on projekt: Omnifood, hvor man bruger alle de ting, man har lært, til et web site, der er lækkert og responsivt.
 
 Bemærk i øvrigt, at hvis man har godt styr på kerneteknologierne html, css og java script, er man uafhængig af værktøjer som Wordpress og Wix til at lave hjemmesider.
+
+## Table of Contents
+
+[TOC]
 
 ### Section 1: Welcome & First Steps
 
