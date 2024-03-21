@@ -69,9 +69,39 @@ Han bemærker, at det er god praksis at skrive semikolon til sidst på linierne,
 
 #### Data Types
 
+#### let, const and var
+
+#### Basic Operators
+
+#### Operator Precedence
+
+#### A Note About Challenges
+
+#### Coding Exercise 1: CHALLENGE #1
+
+#### Strings and Template Literals
+
+#### Taking Decisions: if / else Statements
+
+#### Coding Exercise 2: CHALLENGE #2
+
 ### Section 3: JavaScript Fundamentals - Part 2
 
 ### Section 4: How to Navigate This Course
+
+Dette er et kort kapitel, hvor han har forslag til hvordan man plukker i kurset, hvis man gerne vil hurtigt igennem.
+
+### Section 5: Developer Skills & Editor Setup
+
+#### Section Intro
+
+#### Section Roadmap
+
+#### Setting up Prettier and VS Code
+
+#### Installing Node.js and Setting Up a Dev Environment
+
+
 
 
 
