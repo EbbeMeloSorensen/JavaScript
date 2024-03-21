@@ -135,6 +135,10 @@ Det virker på samme måde som med VS Code extensionen Live Server.
 
 #### Debugging with the Concole and Breakpoints
 
+Han demonstrerer, hvordan man på klassisk vis kan debugge ved at sprinkle, altså skrive statements alla `console.log(a);` i sin kode og så inspicere det i Console-tabben for DevTools i Chrome.
+
+Han demonstrerer også, hvordan man i DevTools i Chrome kan navigere til **"Sources"**-tabben, hvor man kan se java script sourcekoden og der sætte breakpoints ved at klikke til venstre for et givet linienummer. Bemærk, at break points ikke nødvendigvis vises som røde dots lige som i kursusvideoen - på min computer blev de vist som blå faner, der i øvrigt dækkede linienummeret.
+
 #### Coding Challenge #1
 
 ### HTML & CSS Crash Course
