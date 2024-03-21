@@ -123,6 +123,8 @@ Bagefter kan man bringe sin web page op i sin browser ved at eksekvere følgende
 live-server
 ```
 
+Det virker på samme måde som med VS Code extensionen Live Server.
+
 #### Learning How to Code
 
 #### How to Think Like a Developer: Become a Problem Solver!
