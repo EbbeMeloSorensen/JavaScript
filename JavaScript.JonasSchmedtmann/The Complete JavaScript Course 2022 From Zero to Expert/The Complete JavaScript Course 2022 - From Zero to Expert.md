@@ -93,13 +93,63 @@ Dette er et kort kapitel, hvor han har forslag til hvordan man plukker i kurset,
 
 ### Section 5: Developer Skills & Editor Setup
 
+Dette kapitel handler mest om hvordan man effektivt lærer samt arbejder med udvikling og debugging.
+
 #### Section Intro
 
 #### Section Roadmap
 
 #### Setting up Prettier and VS Code
 
+Han giver nogle få anbefalinger vedr VS Code extensions og nævner indledningsvis **Prettier**, som er en "opinionated" formatter, hvilket vil sige, at den opererer med nogle prædefinerede "holdninger" til hvordan kode skal formatteres. Efter installation skal Prettier konfigureres som default formatter. Han demonstrerer i øvrigt hvordan den kan konfigureres, så man kan trække den i retning af ens egen holdninger til hvordan man synes koden skal formateres.
+
+Han anbefaler i øvrigt også at man aktiverer Format on Save.
+
+Så nævner han, at man kan definere sine egne snippets ligesom i andre IDE'er.
+
+Han nævner også et antal andre VS COde extensions, som han bruger: "Auto Close Tag", "Auto Rename Tag", ESLint, Image preview, Monokai Pro, Settings Sync og Todo Highlight.
+
 #### Installing Node.js and Setting Up a Dev Environment
+
+Her fortæller han, at man bør lave sig et udviklingsmiljø, hvor man ikke selv behøver refreshe sin web side i en browser, men derimod benytte en extension eller et framework, der gør det for en. En mulighed er at benytte extensionen Live Server, hvor man så kan klikke på en knap med teksten "Go Live" i nedertse højre side af skærmen for at bringe web pagen op i en browser, hvor den automatisk opdateres ved ændringer. En anden mulighed er at installere node.js og efterfølgende toolet Live Server ved at eksekvere følgende i en terminal:
+
+```
+npm install live-server -g
+```
+
+Bagefter kan man bringe sin web page op i sin browser ved at eksekvere følgende i terminalvinduet:
+
+```
+live-server
+```
+
+#### Learning How to Code
+
+#### How to Think Like a Developer: Become a Problem Solver!
+
+#### Using Google, StackOverflow and MDN
+
+#### Debugging (Fixing Errors)
+
+#### Debugging with the Concole and Breakpoints
+
+#### Coding Challenge #1
+
+### HTML & CSS Crash Course
+
+#### Section Intro
+
+#### Basic HTML Structure and Elements
+
+#### Attributes, Classes and IDs
+
+#### Basic Styling with CSS
+
+#### Introduction to the CSS Box Model
+
+### JavaScript in the Browser: DOM and Event Fundamentals
+
+
 
 
 
