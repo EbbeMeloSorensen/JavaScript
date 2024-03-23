@@ -2,8 +2,8 @@
 
 // First, establish references to the elements that we're gonna access from the javascript file
 
-// Notice that querySelector only returns the first element in case there are multiple elements with the given class.
-// On the other hand, querySelectorAll returns a list of all elements with the given class
+// Notice that querySelector only returns the FIRST element in case there are multiple elements with the given class.
+// On the other hand, querySelectorAll returns a list of all elements with the given class in an array style object
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
@@ -30,7 +30,10 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 }
 
 // "Usually, when you need to manipulate styles on a page, then always just export the styles into a class,
-// and then use the class like in this example, i.e. you add and remove classes from elements in the html page
+// and then use the class like in this example, where you add and remove classes from elements in the html page"
+// Altså.. man skal prøve at undgå at targette element direkte og så manipulere deres style. I stedet bør man
+// lave css rules, der benytter class selectors til at targette html elementer, og så styrer man styling ved
+// at manipulere de class collections, som html-elementerne har
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 

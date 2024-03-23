@@ -188,7 +188,17 @@ Der demonstreres:
 
 #### Working with Classes
 
+Dette handler om de klasser, man kan tildele til html elementer for at kunne targette dem med class selectors fra CSS, som vist nedenfor, hvor et div element har de 2 klasser: overlay og hidden:
+
+```
+<div class="overlay hidden"></div>
+```
+
+Man kan manipulere den collection af klasser, som et element har, fra JavaScript, ved at 
+
 #### Handling an "Esc" Keypress Event
+
+Her demonstreres, hvordan man håndterer key press events og hvordan man fra JavaScript checker, om et element har en given class. Bemærk, at KeyPress events er såkaldt globale events, der ikke kommer fra et givet element.
 
 #### PROJECT #3: Pig Game
 
