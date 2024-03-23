@@ -202,6 +202,8 @@ Her demonstreres, hvordan man håndterer key press events og hvordan man fra Jav
 
 #### PROJECT #3: Pig Game
 
+![alt](sec07 - pig_game_flow_chart.png)
+
 #### Rolling the Dice
 
 #### Switching the Active Player
