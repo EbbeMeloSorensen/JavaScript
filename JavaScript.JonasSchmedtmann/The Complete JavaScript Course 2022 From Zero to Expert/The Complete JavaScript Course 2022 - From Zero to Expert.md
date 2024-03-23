@@ -155,6 +155,53 @@ Han demonstrerer også, hvordan man i DevTools i Chrome kan navigere til **"Sour
 
 ### JavaScript in the Browser: DOM and Event Fundamentals
 
+#### Section Intro
+
+#### Section Roadmap
+
+####  PROJECT #1: Guess My Number!
+
+Et meget simpelt spil, hvor man på så få forsøg som muligt skal gætte et tal mellem 1 og 20 og bare får at vide, om ens gær er for høje eller for lave.
+
+Der demonstreres:
+
+* Hvordan man læser og skriver til content for html elementer fra JavaScript
+* Håndterer button click events, hvos man så manipulere state variable og html strukturen samt stylingen heraf
+
+#### What's the DOM and DOM Manipulation
+
+#### Selecting and Manipulating Elements
+
+#### Handling Click Events
+
+#### Implementing the Game Logic
+
+#### Manipulating CSS Styles
+
+#### Coding Challenge #1
+
+#### Implementing Highscores
+
+#### Refactoring Our Code: The DRY Principle
+
+#### PROJECT #2: Modal Window
+
+#### Working with Classes
+
+#### Handling an "Esc" Keypress Event
+
+#### PROJECT #3: Pig Game
+
+#### Rolling the Dice
+
+#### Switching the Active Player
+
+#### Holding Current Score
+
+#### Resetting the Game
+
+
+
 
 
 
